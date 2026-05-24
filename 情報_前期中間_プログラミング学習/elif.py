@@ -23,3 +23,12 @@ for i in range(15): # 15連ガチャ
     print('R')
   else :
     print('N')
+
+import random
+p = random.random() # 0.0 以上 1.0 未満の実数値の取得
+if p <= 0.5:
+    print('N')
+elif 0.5 <= p < 0.15:
+    print('R')
+else:
+    print('SR')
