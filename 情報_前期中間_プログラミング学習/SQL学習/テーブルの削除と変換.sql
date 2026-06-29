@@ -13,4 +13,11 @@ PRIMARY KEY (shohin_id) --PRIMARY KEYの意味は、shohin_id列を主キーと�
 /*複数行をメモ帳とする場合は、
 このように、複数行をコメントアウトすることができる。*/
 
---なお、表計算ソフトよりも、SQLの方が、データの検索や集計などの処理を効率的に行うことができるため、大量のデータを扱う場合には、SQLを使用することが望ましい。
+DROP TABLE shop; /*DROP TABLEの意味は、shopテーブルを削除するという意味である。
+DROP TABLEを実行すると、shopテーブルに格納されているデータもすべて削除されるため、注意が必要である。*/
+
+ALTER TABLE shop ADD COLUMN shohin_bunrui varchar(100); /*ALTER TABLEの意味は、shopテーブルに新しい列を追加するという意味である。
+ALTER TABLEを実行すると、shopテーブルの構造が変更されるため、既存のデータに影響を与える可能性がある。*/
+
+ALTER TABLE shop DROP shohin_id; --ALTER TABLEの意味は、shopテーブルからshohin_bunrui列を削除するという意味である。
+ALTER TABLE shop DROP (shohin_mei,shohin_kubun);--一度に削除するときは(,,)で囲む必要がある。
