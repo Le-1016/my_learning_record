@@ -321,3 +321,36 @@ FROM emergency_symptoms WHERE symptom_code = 'STROKE_SPEECH';
 INSERT INTO symptom_aliases (symptom_id, alias, normalized_alias)
 SELECT id, '急にしゃべれない', '急にしゃべれない'
 FROM emergency_symptoms WHERE symptom_code = 'STROKE_SPEECH';
+
+
+INSERT INTO symptom_aliases (symptom_id, alias, normalized_alias)
+SELECT id, '言っていることがおかしい', '言っていることがおかしい'
+FROM emergency_symptoms WHERE symptom_code = 'STROKE_SPEECH';
+
+INSERT INTO emergency_symptoms (symptom_code, canonical_name, emergency_level, category, message, action)
+VALUES ('STROKE_LIMB', '突然片側の手足に力が入らない', 5, '脳神経', '脳卒中の可能性があります。', '直ちに119番へ通報してください。');
+
+INSERT INTO symptom_aliases (symptom_id, alias, normalized_alias)
+SELECT id, '片方の腕に力が入らない', '片方の腕に力が入らない'
+FROM emergency_symptoms WHERE symptom_code = 'STROKE_LIMB';
+
+INSERT INTO symptom_aliases (symptom_id, alias, normalized_alias)
+SELECT id, '片足に力が入らない', '片足に力が入らない'
+FROM emergency_symptoms WHERE symptom_code = 'STROKE_LIMB';
+
+INSERT INTO symptom_aliases (symptom_id, alias, normalized_alias)
+SELECT id, '半身が動かない', '半身が動かない'
+FROM emergency_symptoms WHERE symptom_code = 'STROKE_LIMB';
+
+INSERT INTO symptom_aliases (symptom_id, alias, normalized_alias)
+SELECT id, '片側がしびれる', '片側がしびれる'
+FROM emergency_symptoms WHERE symptom_code = 'STROKE_LIMB';
+
+INSERT INTO symptom_aliases (symptom_id, alias, normalized_alias)
+SELECT id, '急に手足が動かない', '急に手足が動かない'
+FROM emergency_symptoms WHERE symptom_code = 'STROKE_LIMB';
+
+INSERT INTO symptom_aliases (symptom_id, alias, normalized_alias)
+SELECT id, '片腕が上がらない', '片腕が上がらない'
+FROM emergency_symptoms WHERE symptom_code = 'STROKE_LIMB';
+
