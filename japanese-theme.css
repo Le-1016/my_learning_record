@@ -24,10 +24,10 @@ nav a,
 }
 
 .hero h1 {
-  font-size: clamp(52px, 8vw, 126px);
+  font-size: clamp(44px, 6.2vw, 96px);
   font-weight: 900;
-  line-height: 1.05;
-  letter-spacing: -0.055em;
+  line-height: 1.08;
+  letter-spacing: -0.045em;
   text-shadow: 0 0 24px rgba(229, 34, 34, 0.12);
 }
 
@@ -102,7 +102,7 @@ nav a:hover {
 
 @media (max-width: 600px) {
   .hero h1 {
-    font-size: clamp(42px, 14vw, 72px);
+    font-size: clamp(36px, 11vw, 58px);
   }
 
   .about-box {
