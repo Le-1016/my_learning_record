@@ -125,7 +125,7 @@ nav a:hover {
   color: var(--white);
 }
 
-/* 全ページ共通：細い赤線の上を光が静かに走る */
+/* 全ページ共通：1本の赤線の一部だけが少し太く光りながら移動 */
 .background::after {
   content: "";
   position: fixed;
@@ -135,55 +135,51 @@ nav a:hover {
   height: 1px;
   z-index: 1;
   pointer-events: none;
-  opacity: 0.72;
-  background:
-    linear-gradient(90deg,
-      rgba(229, 34, 34, 0.02) 0%,
-      rgba(229, 34, 34, 0.10) 35%,
-      rgba(229, 34, 34, 0.16) 50%,
-      rgba(229, 34, 34, 0.10) 65%,
-      rgba(229, 34, 34, 0.02) 100%);
-  overflow: hidden;
+  opacity: 0.82;
+  background: rgba(229, 34, 34, 0.22);
+  box-shadow: 0 0 3px rgba(229, 34, 34, 0.08);
 }
 
 .background::before {
   content: "";
   position: fixed;
   top: calc(72% - 1px);
-  left: -180px;
-  width: 150px;
+  left: -220px;
+  width: 190px;
   height: 3px;
   z-index: 2;
   pointer-events: none;
   border-radius: 999px;
   opacity: 0;
-  background: linear-gradient(90deg,
+  background: linear-gradient(
+    90deg,
     transparent 0%,
-    rgba(255, 55, 55, 0.08) 16%,
-    rgba(255, 78, 78, 0.75) 46%,
-    rgba(255, 125, 125, 1) 52%,
-    rgba(255, 78, 78, 0.75) 58%,
-    rgba(255, 55, 55, 0.08) 84%,
-    transparent 100%);
+    rgba(229, 34, 34, 0.12) 14%,
+    rgba(255, 48, 48, 0.58) 34%,
+    rgba(255, 108, 108, 0.98) 50%,
+    rgba(255, 48, 48, 0.58) 66%,
+    rgba(229, 34, 34, 0.12) 86%,
+    transparent 100%
+  );
   box-shadow:
-    0 0 5px rgba(255, 55, 55, 0.50),
-    0 0 12px rgba(229, 34, 34, 0.24);
-  animation: globalRedSweep 7.4s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+    0 0 5px rgba(255, 70, 70, 0.48),
+    0 0 11px rgba(229, 34, 34, 0.26);
+  animation: globalRedSweep 6.8s linear infinite;
 }
 
 @keyframes globalRedSweep {
   0% {
-    left: -180px;
+    left: -220px;
     opacity: 0;
   }
-  8% {
-    opacity: 0.9;
+  6% {
+    opacity: 1;
   }
-  82% {
-    opacity: 0.9;
+  94% {
+    opacity: 1;
   }
   100% {
-    left: calc(100% + 180px);
+    left: calc(100% + 220px);
     opacity: 0;
   }
 }
@@ -195,7 +191,7 @@ nav a:hover {
   }
 
   .background::after {
-    opacity: 0.28;
+    opacity: 0.45;
   }
 }
 
