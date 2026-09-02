@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAREER｜LEON INABA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700;800;900&family=Orbitron:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20260903-0315">
+  <link rel="stylesheet" href="japanese-theme.css?v=20260903-0315">
+  <style>
+    .career-page {
+      min-height: 100vh;
+      padding: 150px 7vw 120px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .career-title {
+      margin: 0 0 16px;
+      color: var(--red);
+      font-family: "Orbitron", sans-serif;
+      font-size: clamp(48px, 7vw, 96px);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    .career-lead {
+      max-width: 760px;
+      margin: 0 0 90px;
+      color: var(--white);
+      line-height: 2;
+      opacity: 0.8;
+    }
+
+    .career-list {
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .career-row {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: clamp(30px, 6vw, 90px);
+      padding: 58px 0;
+      border-top: 1px solid rgba(229,34,34,0.14);
+    }
+
+    .career-row:last-child {
+      border-bottom: 1px solid rgba(229,34,34,0.14);
+    }
+
+    .career-phase {
+      color: var(--red);
+      font-family: "Orbitron", sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+    }
+
+    .career-copy h2 {
+      margin: 0 0 18px;
+      color: var(--red);
+      font-family: "Orbitron", sans-serif;
+      font-size: clamp(26px, 3vw, 40px);
+      letter-spacing: 0.04em;
+    }
+
+    .career-copy p {
+      margin: 0;
+      color: var(--white);
+      font-size: 15px;
+      line-height: 2.05;
+      opacity: 0.8;
+    }
+
+    nav a.active {
+      color: var(--red-bright);
+      text-shadow: 0 0 10px rgba(229,34,34,0.45);
+    }
+
+    @media (max-width: 760px) {
+      .career-page { padding: 130px 7vw 90px; }
+      .career-lead { margin-bottom: 54px; }
+      .career-row {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 44px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="background" aria-hidden="true">
+    <div class="grid"></div>
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+  </div>
+
+  <header>
+    <a href="index.html" class="logo">LEON INABA<span>.</span></a>
+    <nav>
+      <a href="skill.html">SKILL</a>
+      <a href="index.html#activity">ACTIVITY</a>
+      <a href="index.html#certification">CERTIFICATION</a>
+      <a href="index.html#research">RESEARCH</a>
+      <a href="career.html" class="active">CAREER</a>
+    </nav>
+  </header>
+
+  <main class="career-page">
+    <h1 class="career-title">CAREER</h1>
+    <p class="career-lead">現在の学びから、その先に目指している方向までをまとめています。</p>
+
+    <div class="career-list">
+      <section class="career-row">
+        <div class="career-phase">NOW</div>
+        <div class="career-copy">
+          <h2>Learn & Build</h2>
+          <p>AI・ソフトウェア開発を中心に、授業だけに限らず、自分で手を動かしながら技術を学んでいます。学習した内容は制作や実験を通して確かめることを重視しています。</p>
+        </div>
+      </section>
+
+      <section class="career-row">
+        <div class="career-phase">NEXT</div>
+        <div class="career-copy">
+          <h2>Research & Practice</h2>
+          <p>AI・データ・ソフトウェアの知識をさらに深め、研究や実践的な開発につなげていくことを目標にしています。単に技術を知るだけでなく、実際の課題に使える形にすることを目指します。</p>
+        </div>
+      </section>
+
+      <section class="career-row">
+        <div class="career-phase">FUTURE</div>
+        <div class="career-copy">
+          <h2>AI Engineer</h2>
+          <p>AIを中心とした技術分野で、開発・研究・システム設計に関わることを目指しています。技術そのものだけでなく、それをどう社会で活用するかまで考えられるエンジニアを目標にしています。</p>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
