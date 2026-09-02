@@ -3,136 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Portfolio</title>
+  <title>トウマ｜ポートフォリオ</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <!-- 背景 -->
-  <div class="background">
+  <div class="background" aria-hidden="true">
     <div class="grid"></div>
     <div class="glow glow-1"></div>
     <div class="glow glow-2"></div>
   </div>
 
-
-  <!-- Navigation -->
   <header>
-    <a href="#" class="logo">
-      TOUMA<span>.</span>
-    </a>
+    <a href="#" class="logo">TOUMA<span>.</span></a>
 
     <nav>
-      <a href="#about">About</a>
-      <a href="#works">Works</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
+      <a href="#about">自己紹介</a>
+      <a href="#works">制作物</a>
+      <a href="#skills">技術</a>
+      <a href="#contact">連絡先</a>
     </nav>
   </header>
 
-
-  <!-- Hero -->
   <main>
-
     <section class="hero">
-
       <div class="hero-content">
-
         <h1>
-          CREATE<br>
-          <span>BEYOND</span><br>
-          THE LIMIT.
+          限界の、<br>
+          <span>その先へ。</span>
         </h1>
 
         <p>
-          Artificial Intelligence / Software Development
+          人工知能・ソフトウェア開発を中心に、学んだことと制作したものを記録しています。
         </p>
 
         <a href="#works" class="hero-button">
-          Explore
+          制作物を見る
           <span>→</span>
         </a>
-
       </div>
 
-      <div class="hero-decoration">
+      <div class="hero-decoration" aria-hidden="true">
         <div class="circle circle-1"></div>
         <div class="circle circle-2"></div>
         <div class="circle circle-3"></div>
       </div>
 
-      <div class="scroll-line"></div>
-
+      <div class="scroll-line" aria-hidden="true"></div>
     </section>
 
-
-    <!-- Works -->
     <section id="works" class="works">
-
       <div class="section-heading">
-        <h2>Works<span>.</span></h2>
+        <h2>制作物</h2>
       </div>
 
       <div class="works-grid">
-
         <article class="work-card">
           <div class="work-image"></div>
-
           <div class="work-content">
-            <h3>Project</h3>
-            <p>Python / AI / Machine Learning</p>
+            <h3>人工知能・機械学習</h3>
+            <p>Pythonを中心に、機械学習やAIに関する制作・学習記録を掲載します。</p>
           </div>
         </article>
 
-
         <article class="work-card">
           <div class="work-image"></div>
-
           <div class="work-content">
-            <h3>Project</h3>
-            <p>Web / Software Development</p>
+            <h3>ソフトウェア開発</h3>
+            <p>Webやプログラミングを通して制作したソフトウェアを掲載します。</p>
           </div>
         </article>
 
-
         <article class="work-card">
           <div class="work-image"></div>
-
           <div class="work-content">
-            <h3>Project</h3>
-            <p>Research / Technology</p>
+            <h3>研究・技術学習</h3>
+            <p>研究、技術調査、授業外で取り組んだ学習内容などをまとめます。</p>
           </div>
         </article>
-
       </div>
-
     </section>
 
-
-    <!-- About -->
     <section id="about" class="about">
-
       <div class="section-heading">
-        <h2>About<span>.</span></h2>
+        <h2>自己紹介</h2>
       </div>
 
-      <div class="about-box"></div>
-
+      <div class="about-box">
+        <p>
+          人工知能やソフトウェア開発を学びながら、自分の興味を形にすることを大切にしています。
+          このポートフォリオでは、制作物・学習記録・研究活動を順次掲載していきます。
+        </p>
+      </div>
     </section>
-
   </main>
-
 
   <footer>
     <div class="footer-line"></div>
