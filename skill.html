@@ -79,26 +79,32 @@
     }
 
     .sql-visual {
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 24px;
     }
 
     .sql-logo {
-      width: clamp(100px, 11vw, 150px);
-      height: clamp(100px, 11vw, 150px);
+      width: clamp(120px, 14vw, 190px);
+      height: clamp(120px, 14vw, 190px);
       object-fit: contain;
-      filter: none;
-      opacity: 0.95;
+      filter: brightness(0) saturate(100%) invert(24%) sepia(94%) saturate(5107%) hue-rotate(350deg) brightness(103%) contrast(96%);
+      opacity: 1;
     }
 
     .sql-label {
-      font-family: "Orbitron", sans-serif;
-      font-size: clamp(42px, 6vw, 78px);
-      font-weight: 800;
-      letter-spacing: 0.04em;
-      color: var(--red-bright);
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-family: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif;
+      font-size: clamp(28px, 4vw, 46px);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: #fff;
+      line-height: 1;
+      pointer-events: none;
     }
 
     .skill-row:hover .skill-logo {
@@ -108,7 +114,7 @@
 
     .skill-row:hover .sql-logo {
       transform: none;
-      filter: none;
+      filter: brightness(0) saturate(100%) invert(24%) sepia(94%) saturate(5107%) hue-rotate(350deg) brightness(103%) contrast(96%);
     }
 
     .skill-row:hover .skill-wordmark {
@@ -167,9 +173,12 @@
       .skill-visual { min-height: 180px; justify-content: flex-start; }
       .skill-logo { width: 120px; height: 120px; }
       .skill-wordmark { font-size: 72px; }
-      .sql-visual { gap: 16px; }
-      .sql-logo { width: 92px; height: 92px; }
-      .sql-label { font-size: 46px; }
+      .sql-visual { justify-content: flex-start; }
+      .sql-logo { width: 120px; height: 120px; }
+      .sql-label {
+        left: 60px;
+        font-size: 30px;
+      }
     }
   </style>
 </head>
