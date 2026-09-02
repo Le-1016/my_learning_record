@@ -16,7 +16,7 @@ nav a,
 
 .logo {
   letter-spacing: 0.08em;
-  word-spacing: 0.34em;
+  word-spacing: 0.72em;
 }
 
 /* トピック・タイトルは赤 */
@@ -54,7 +54,7 @@ nav a,
 }
 
 .hero-line-white {
-  color: var(--white) !important;
+  color: #fff !important;
   text-shadow: none;
 }
 
