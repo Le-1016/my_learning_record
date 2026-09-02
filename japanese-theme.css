@@ -1,0 +1,106 @@
+/* 日本語・明朝体テーマ上書き */
+
+body {
+  font-family: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif;
+  color: var(--white);
+}
+
+.logo,
+nav a,
+.hero-button,
+.hero p,
+.work-content p,
+.about-box p {
+  font-family: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif;
+}
+
+/* トピック・タイトルは赤 */
+.hero h1,
+.hero h1 span,
+.section-heading h2,
+.work-content h3 {
+  color: var(--red);
+  font-family: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif;
+}
+
+.hero h1 {
+  font-size: clamp(52px, 8vw, 126px);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.055em;
+  text-shadow: 0 0 24px rgba(229, 34, 34, 0.12);
+}
+
+.hero h1 span {
+  display: inline-block;
+}
+
+/* 文章は白 */
+.hero p,
+.work-content p,
+.about-box p {
+  color: var(--white);
+}
+
+.hero p {
+  max-width: 680px;
+  font-size: 15px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  opacity: 0.88;
+}
+
+.section-heading h2 {
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.work-content h3 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.work-content p {
+  font-size: 13px;
+  line-height: 1.9;
+  letter-spacing: 0.02em;
+  opacity: 0.82;
+}
+
+.about-box {
+  padding: 48px;
+  display: flex;
+  align-items: center;
+}
+
+.about-box p {
+  max-width: 760px;
+  margin: 0;
+  font-size: 16px;
+  line-height: 2.1;
+  opacity: 0.9;
+}
+
+nav a {
+  color: #bdbdbd;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+}
+
+nav a:hover {
+  color: var(--red);
+}
+
+.hero-button {
+  color: var(--white);
+}
+
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: clamp(42px, 14vw, 72px);
+  }
+
+  .about-box {
+    padding: 28px;
+  }
+}
