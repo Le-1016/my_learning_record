@@ -71,10 +71,25 @@
       transition: transform .35s ease, filter .35s ease, opacity .35s ease;
     }
 
+    .skill-wordmark {
+      font-family: "Orbitron", sans-serif;
+      font-size: clamp(72px, 10vw, 150px);
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      color: rgba(255,255,255,0.88);
+      transition: transform .35s ease, color .35s ease, text-shadow .35s ease;
+    }
+
     .skill-row:hover .skill-logo {
       transform: scale(1.045);
       filter: grayscale(0.15) brightness(1.05) contrast(1.1) drop-shadow(0 0 16px rgba(229,34,34,0.16));
       opacity: 1;
+    }
+
+    .skill-row:hover .skill-wordmark {
+      transform: scale(1.045);
+      color: var(--red-bright);
+      text-shadow: 0 0 18px rgba(229,34,34,0.18);
     }
 
     .skill-copy { max-width: 520px; }
@@ -125,6 +140,7 @@
       .skill-row.reverse .skill-copy { order: initial; }
       .skill-visual { min-height: 180px; justify-content: flex-start; }
       .skill-logo { width: 120px; height: 120px; }
+      .skill-wordmark { font-size: 72px; }
     }
   </style>
 </head>
@@ -148,94 +164,72 @@
 
   <main class="skill-page">
     <h1 class="skill-title">SKILL</h1>
-    <p class="skill-lead">現在扱っている開発・AI・サーバー環境を、実際に使っている構成に沿ってまとめています。</p>
+    <p class="skill-lead">現在扱っているAI・開発・データ関連の技術をまとめています。</p>
 
     <div class="skill-list">
       <section class="skill-row">
         <div class="skill-copy">
-          <p class="skill-kicker">SERVER OS</p>
-          <h2>Ubuntu Server 24.04 LTS</h2>
-          <p>サーバー環境のベースとして使用。各種開発ツール、データベース、Webサーバーなどを動かす基盤として扱っています。</p>
+          <p class="skill-kicker">AI / DEEP LEARNING</p>
+          <h2>PyTorch</h2>
+          <p>ニューラルネットワークの構築や画像分類など、深層学習の実装に使用しています。AI・機械学習・データ分析を中心に扱っています。</p>
         </div>
         <div class="skill-visual">
-          <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ubuntu/ubuntu-original.svg" alt="Ubuntu logo">
+          <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" alt="PyTorch logo">
         </div>
       </section>
 
       <section class="skill-row reverse">
         <div class="skill-visual">
-          <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python logo">
+          <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/julia/julia-original.svg" alt="Julia logo">
         </div>
-        <div class="skill-copy">
-          <p class="skill-kicker">AI / DATA ANALYSIS</p>
-          <h2>Python</h2>
-          <p>PyTorch、scikit-learnを用いたAI・機械学習・データ分析に使用しています。</p>
-        </div>
-      </section>
-
-      <section class="skill-row">
         <div class="skill-copy">
           <p class="skill-kicker">NUMERICAL COMPUTING / RESEARCH</p>
           <h2>Julia</h2>
           <p>数値計算や研究用途で使用しています。</p>
         </div>
-        <div class="skill-visual">
-          <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/julia/julia-original.svg" alt="Julia logo">
-        </div>
-      </section>
-
-      <section class="skill-row reverse">
-        <div class="skill-visual">
-          <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg" alt="Go logo">
-        </div>
-        <div class="skill-copy">
-          <p class="skill-kicker">BACKEND / SERVER PROGRAMMING</p>
-          <h2>Go</h2>
-          <p>API、バックエンド、サーバープログラムの開発に使用しています。</p>
-        </div>
       </section>
 
       <section class="skill-row">
         <div class="skill-copy">
-          <p class="skill-kicker">DATABASE</p>
-          <h2>PostgreSQL</h2>
-          <p>SQLによるデータ操作や、アプリケーションのデータ保存に使用しています。</p>
+          <p class="skill-kicker">BACKEND / API</p>
+          <h2>Go</h2>
+          <p>APIやバックエンドプログラムの開発に使用しています。</p>
         </div>
         <div class="skill-visual">
-          <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL logo">
+          <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg" alt="Go logo">
         </div>
       </section>
 
       <section class="skill-row reverse">
         <div class="skill-visual">
-          <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker logo">
+          <div class="skill-wordmark" aria-label="SQL">SQL</div>
         </div>
+        <div class="skill-copy">
+          <p class="skill-kicker">DATABASE</p>
+          <h2>SQL</h2>
+          <p>データの保存、取得、検索、集計など、データベース操作に使用しています。</p>
+        </div>
+      </section>
+
+      <section class="skill-row">
         <div class="skill-copy">
           <p class="skill-kicker">CONTAINER</p>
           <h2>Docker</h2>
           <p>AIアプリ、データベース、Webサービスをコンテナ化して動かすために使用しています。</p>
         </div>
-      </section>
-
-      <section class="skill-row">
-        <div class="skill-copy">
-          <p class="skill-kicker">VERSION CONTROL</p>
-          <h2>Git / GitHub</h2>
-          <p>ソースコードのバージョン管理とGitHubでの公開・管理に使用しています。</p>
-        </div>
         <div class="skill-visual">
-          <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git logo">
+          <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker logo">
         </div>
       </section>
 
       <section class="skill-row reverse">
         <div class="skill-visual">
-          <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg" alt="Nginx logo">
+          <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git logo">
         </div>
         <div class="skill-copy">
-          <p class="skill-kicker">WEB SERVER</p>
-          <h2>Nginx</h2>
-          <p>Webサーバーとして扱い、ポートフォリオなどのWebコンテンツ公開に使用しています。</p>
+          <p class="skill-kicker">VERSION CONTROL</p>
+          <h2>Git / GitHub</h2>
+          <p>ソースコードのバージョン管理とGitHubでの公開・管理に使用しています。</p>
         </div>
       </section>
     </div>
