@@ -30,14 +30,46 @@ nav a,
 
 .hero h1 {
   position: relative;
+  display: inline-block;
   font-size: clamp(44px, 6.2vw, 96px);
   font-weight: 800;
   line-height: 1.02;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   white-space: nowrap;
-  text-shadow: 0 0 24px rgba(229, 34, 34, 0.16);
-  animation: cyberTextNoise 6s steps(1, end) infinite;
+  color: var(--red);
+  text-shadow:
+    4px 0 rgba(255, 0, 0, 0.48),
+    -4px 0 rgba(255, 255, 255, 0.16),
+    0 0 28px rgba(229, 34, 34, 0.32);
+  animation: cyberTextHardGlitch 1.25s steps(1, end) infinite;
+}
+
+.hero h1::before,
+.hero h1::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.hero h1::before {
+  color: #ff2a2a;
+  transform: translate(4px, 0);
+  text-shadow: -3px 0 #000;
+  clip-path: inset(0 0 58% 0);
+  animation: glitchSliceTop 0.72s steps(2, end) infinite;
+}
+
+.hero h1::after {
+  color: #f3f3f3;
+  opacity: 0.76;
+  transform: translate(-4px, 0);
+  text-shadow: 3px 0 #710000;
+  clip-path: inset(56% 0 0 0);
+  animation: glitchSliceBottom 0.94s steps(2, end) infinite reverse;
 }
 
 .hero h1 span {
@@ -45,31 +77,45 @@ nav a,
   letter-spacing: 0.08em;
 }
 
-/* 控えめなサイバーノイズ */
+/* ガチめの走査線・ノイズ */
 .hero-content::after {
   content: "";
   position: absolute;
-  left: -3%;
-  top: -10%;
-  width: 106%;
-  height: 120%;
+  left: -5%;
+  top: -18%;
+  width: 112%;
+  height: 136%;
   pointer-events: none;
-  opacity: 0.12;
+  opacity: 0.34;
   mix-blend-mode: screen;
   background-image:
     repeating-linear-gradient(
       0deg,
-      transparent 0 3px,
-      rgba(229, 34, 34, 0.16) 3px 4px,
-      transparent 4px 8px
+      transparent 0 2px,
+      rgba(255, 35, 35, 0.24) 2px 3px,
+      transparent 3px 6px
     ),
     repeating-linear-gradient(
       90deg,
-      transparent 0 34px,
-      rgba(255,255,255,0.035) 34px 35px,
-      transparent 35px 72px
+      transparent 0 26px,
+      rgba(255,255,255,0.065) 26px 27px,
+      transparent 27px 54px
     );
-  animation: cyberNoiseShift 4.8s steps(2, end) infinite;
+  animation: cyberNoiseShiftHard 0.58s steps(2, end) infinite;
+}
+
+.hero-content::before {
+  content: "";
+  position: absolute;
+  left: -10%;
+  top: 34%;
+  width: 120%;
+  height: 4px;
+  pointer-events: none;
+  z-index: 3;
+  background: linear-gradient(90deg, transparent, rgba(255,45,45,0.95), rgba(255,255,255,0.55), rgba(255,45,45,0.95), transparent);
+  box-shadow: 0 0 18px rgba(255,35,35,0.7);
+  animation: scanCrash 2.1s steps(1, end) infinite;
 }
 
 /* 文章は白 */
@@ -139,34 +185,114 @@ nav a:hover {
   color: var(--white);
 }
 
-@keyframes cyberTextNoise {
-  0%, 88%, 100% {
-    transform: translate(0, 0);
-    text-shadow: 0 0 24px rgba(229, 34, 34, 0.16);
+@keyframes cyberTextHardGlitch {
+  0%, 7%, 10%, 17%, 21%, 33%, 37%, 61%, 66%, 84%, 100% {
+    transform: translate(0, 0) skewX(0deg);
   }
-  89% {
-    transform: translate(-1px, 0);
-    text-shadow: 2px 0 rgba(255, 35, 35, 0.28), -2px 0 rgba(255,255,255,0.06);
+  8% { transform: translate(-5px, 1px) skewX(-2deg); }
+  9% { transform: translate(6px, -1px) skewX(1deg); }
+  18% { transform: translate(3px, 0); }
+  19% { transform: translate(-7px, 1px); }
+  20% { transform: translate(4px, -1px); }
+  34% { transform: translate(-3px, 0) skewX(3deg); }
+  35% { transform: translate(8px, 1px); }
+  36% { transform: translate(-5px, -1px); }
+  62% { transform: translate(5px, 0); }
+  63% { transform: translate(-8px, 1px) skewX(-3deg); }
+  64% { transform: translate(2px, -1px); }
+  65% { transform: translate(0, 0); }
+  85% { transform: translate(-6px, 0); }
+  86% { transform: translate(7px, -1px); }
+  87% { transform: translate(-3px, 1px); }
+}
+
+@keyframes glitchSliceTop {
+  0%, 15%, 18%, 41%, 45%, 67%, 70%, 100% {
+    clip-path: inset(0 0 58% 0);
+    transform: translate(4px, 0);
   }
-  90% {
-    transform: translate(1px, 0);
-    text-shadow: -2px 0 rgba(255, 35, 35, 0.25), 2px 0 rgba(255,255,255,0.05);
+  16% {
+    clip-path: inset(8% 0 70% 0);
+    transform: translate(-8px, -2px);
   }
-  91% {
-    transform: translate(0, 0);
-    text-shadow: 0 0 24px rgba(229, 34, 34, 0.16);
+  17% {
+    clip-path: inset(28% 0 48% 0);
+    transform: translate(10px, 1px);
+  }
+  42% {
+    clip-path: inset(2% 0 82% 0);
+    transform: translate(12px, 0);
+  }
+  43% {
+    clip-path: inset(20% 0 55% 0);
+    transform: translate(-10px, 2px);
+  }
+  68% {
+    clip-path: inset(36% 0 38% 0);
+    transform: translate(9px, -1px);
+  }
+  69% {
+    clip-path: inset(12% 0 72% 0);
+    transform: translate(-12px, 1px);
   }
 }
 
-@keyframes cyberNoiseShift {
-  0%, 100% { transform: translate(0, 0); opacity: 0.08; }
-  25% { transform: translate(2px, -1px); opacity: 0.12; }
-  50% { transform: translate(-2px, 1px); opacity: 0.07; }
-  75% { transform: translate(1px, 0); opacity: 0.11; }
+@keyframes glitchSliceBottom {
+  0%, 13%, 17%, 39%, 43%, 72%, 76%, 100% {
+    clip-path: inset(56% 0 0 0);
+    transform: translate(-4px, 0);
+  }
+  14% {
+    clip-path: inset(64% 0 12% 0);
+    transform: translate(10px, 2px);
+  }
+  15% {
+    clip-path: inset(48% 0 28% 0);
+    transform: translate(-12px, -1px);
+  }
+  40% {
+    clip-path: inset(74% 0 5% 0);
+    transform: translate(-10px, 0);
+  }
+  41% {
+    clip-path: inset(52% 0 26% 0);
+    transform: translate(13px, -2px);
+  }
+  73% {
+    clip-path: inset(58% 0 18% 0);
+    transform: translate(-11px, 1px);
+  }
+  74% {
+    clip-path: inset(70% 0 8% 0);
+    transform: translate(12px, -1px);
+  }
+}
+
+@keyframes cyberNoiseShiftHard {
+  0% { transform: translate(0, 0); opacity: 0.22; }
+  20% { transform: translate(4px, -2px); opacity: 0.42; }
+  40% { transform: translate(-5px, 2px); opacity: 0.28; }
+  60% { transform: translate(3px, 1px); opacity: 0.38; }
+  80% { transform: translate(-3px, -1px); opacity: 0.48; }
+  100% { transform: translate(0, 0); opacity: 0.24; }
+}
+
+@keyframes scanCrash {
+  0%, 15% { top: 22%; opacity: 0; }
+  16% { top: 24%; opacity: 1; }
+  24% { top: 58%; opacity: 0.85; }
+  25% { top: 60%; opacity: 0; }
+  54% { top: 34%; opacity: 0; }
+  55% { top: 36%; opacity: 0.9; }
+  61% { top: 78%; opacity: 0.65; }
+  62%, 100% { top: 80%; opacity: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .hero h1,
+  .hero h1::before,
+  .hero h1::after,
+  .hero-content::before,
   .hero-content::after {
     animation: none !important;
   }
