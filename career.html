@@ -10,185 +10,47 @@
   <link rel="stylesheet" href="style.css?v=20260903-0355">
   <link rel="stylesheet" href="japanese-theme.css?v=20260903-0355">
   <style>
-    .career-page {
-      min-height: 100vh;
-      padding: 150px 7vw 120px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .career-title {
-      margin: 0 0 16px;
-      color: var(--red);
-      font-family: "Orbitron", sans-serif;
-      font-size: clamp(48px, 7vw, 96px);
-      font-weight: 800;
-      letter-spacing: 0.08em;
-    }
-
-    .career-lead {
-      max-width: 760px;
-      margin: 0 0 90px;
-      color: var(--white);
-      line-height: 2;
-      opacity: 0.8;
-    }
-
-    .timeline {
-      position: relative;
-      max-width: 1040px;
-      margin: 0 auto;
-      padding: 12px 0 24px;
-    }
-
-    .timeline::before {
-      content: "";
-      position: absolute;
-      left: 196px;
-      top: 0;
-      bottom: 0;
-      width: 4px;
-      background: var(--red);
-    }
-
-    .timeline-item {
-      position: relative;
-      display: grid;
-      grid-template-columns: 150px 70px 1fr;
-      align-items: start;
-      min-height: 165px;
-      padding: 12px 0 36px;
-    }
-
-    .timeline-phase {
-      padding-top: 12px;
-      color: var(--red);
-      font-family: "Orbitron", sans-serif;
-      font-size: clamp(16px, 1.7vw, 22px);
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      white-space: nowrap;
-    }
-
-    .timeline-node {
-      position: relative;
-      z-index: 2;
-      width: 42px;
-      height: 42px;
-      margin: 0 auto;
-      border: 7px solid var(--red);
-      border-radius: 50%;
-      background: #080808;
-      box-sizing: border-box;
-    }
-
-    .timeline-copy {
-      padding: 1px 0 0 18px;
-      max-width: 680px;
-    }
-
-    .timeline-copy h2 {
-      margin: 0;
-      color: var(--red);
-      font-family: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif;
-      font-size: clamp(23px, 2.5vw, 34px);
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      line-height: 1.7;
-    }
-
-    nav a.active {
-      color: var(--red-bright);
-      text-shadow: 0 0 10px rgba(229,34,34,0.45);
-    }
-
+    .career-page { min-height: 100vh; padding: 150px 7vw 120px; position: relative; z-index: 2; }
+    .career-title { margin: 0 0 16px; color: var(--red); font-family: "Orbitron", sans-serif; font-size: clamp(48px, 7vw, 96px); font-weight: 800; letter-spacing: 0.08em; }
+    .career-lead { max-width: 760px; margin: 0 0 90px; color: var(--white); line-height: 2; opacity: 0.8; }
+    .timeline { position: relative; max-width: 1040px; margin: 0 auto; padding: 12px 0 24px; }
+    .timeline::before { content: ""; position: absolute; left: 196px; top: 0; bottom: 0; width: 4px; background: var(--red); }
+    .timeline-item { position: relative; display: grid; grid-template-columns: 150px 70px 1fr; align-items: start; min-height: 165px; padding: 12px 0 36px; }
+    .timeline-phase { padding-top: 12px; color: var(--red); font-family: "Orbitron", sans-serif; font-size: clamp(16px, 1.7vw, 22px); font-weight: 700; letter-spacing: 0.05em; white-space: nowrap; }
+    .timeline-node { position: relative; z-index: 2; width: 42px; height: 42px; margin: 0 auto; border: 7px solid var(--red); border-radius: 50%; background: #080808; box-sizing: border-box; }
+    .timeline-copy { padding: 1px 0 0 18px; max-width: 680px; }
+    .timeline-copy h2 { margin: 0; color: var(--red); font-family: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif; font-size: clamp(23px, 2.5vw, 34px); font-weight: 600; letter-spacing: 0.02em; line-height: 1.7; }
+    nav a.active { color: var(--red-bright); text-shadow: 0 0 10px rgba(229,34,34,0.45); }
     @media (max-width: 760px) {
-      .career-page {
-        padding: 130px 7vw 90px;
-      }
-
-      .career-lead {
-        margin-bottom: 58px;
-      }
-
-      .timeline::before {
-        left: 25px;
-      }
-
-      .timeline-item {
-        grid-template-columns: 50px 1fr;
-        min-height: 0;
-        padding: 0 0 54px;
-      }
-
-      .timeline-phase {
-        grid-column: 2;
-        padding: 0 0 8px 18px;
-        font-size: 14px;
-      }
-
-      .timeline-node {
-        grid-column: 1;
-        grid-row: 1 / span 2;
-        width: 34px;
-        height: 34px;
-        border-width: 6px;
-        margin: 0 0 0 10px;
-      }
-
-      .timeline-copy {
-        grid-column: 2;
-        padding: 0 0 0 18px;
-      }
+      .career-page { padding: 130px 7vw 90px; }
+      .career-lead { margin-bottom: 58px; }
+      .timeline::before { left: 25px; }
+      .timeline-item { grid-template-columns: 50px 1fr; min-height: 0; padding: 0 0 54px; }
+      .timeline-phase { grid-column: 2; padding: 0 0 8px 18px; font-size: 14px; }
+      .timeline-node { grid-column: 1; grid-row: 1 / span 2; width: 34px; height: 34px; border-width: 6px; margin: 0 0 0 10px; }
+      .timeline-copy { grid-column: 2; padding: 0 0 0 18px; }
     }
   </style>
 </head>
 <body>
-  <div class="background" aria-hidden="true">
-    <div class="grid"></div>
-    <div class="glow glow-1"></div>
-    <div class="glow glow-2"></div>
-  </div>
-
+  <div class="background" aria-hidden="true"><div class="grid"></div><div class="glow glow-1"></div><div class="glow glow-2"></div></div>
   <header>
     <a href="index.html" class="logo">LEON INABA<span>.</span></a>
     <nav>
       <a href="skill.html">SKILL</a>
       <a href="index.html#activity">ACTIVITY</a>
-      <a href="index.html#certification">CERTIFICATION</a>
+      <a href="certification.html">CERTIFICATION</a>
       <a href="index.html#research">RESEARCH</a>
       <a href="career.html" class="active">CAREER</a>
     </nav>
   </header>
-
   <main class="career-page">
     <h1 class="career-title">CAREER</h1>
     <p class="career-lead">これまでの進学・在籍の記録を時系列でまとめています。</p>
-
     <div class="timeline">
-      <section class="timeline-item">
-        <div class="timeline-phase">2025.03</div>
-        <div class="timeline-node" aria-hidden="true"></div>
-        <div class="timeline-copy">
-          <h2>大阪市立文の里中学校　卒業</h2>
-        </div>
-      </section>
-
-      <section class="timeline-item">
-        <div class="timeline-phase">2025.04</div>
-        <div class="timeline-node" aria-hidden="true"></div>
-        <div class="timeline-copy">
-          <h2>大阪公立大学高専　入学</h2>
-        </div>
-      </section>
-
-      <section class="timeline-item">
-        <div class="timeline-phase">2026.04</div>
-        <div class="timeline-node" aria-hidden="true"></div>
-        <div class="timeline-copy">
-          <h2>2年次　進級</h2>
-        </div>
-      </section>
+      <section class="timeline-item"><div class="timeline-phase">2025.03</div><div class="timeline-node" aria-hidden="true"></div><div class="timeline-copy"><h2>大阪市立文の里中学校　卒業</h2></div></section>
+      <section class="timeline-item"><div class="timeline-phase">2025.04</div><div class="timeline-node" aria-hidden="true"></div><div class="timeline-copy"><h2>大阪公立大学高専　入学</h2></div></section>
+      <section class="timeline-item"><div class="timeline-phase">2026.04</div><div class="timeline-node" aria-hidden="true"></div><div class="timeline-copy"><h2>2年次　進級</h2></div></section>
     </div>
   </main>
 </body>
