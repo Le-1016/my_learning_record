@@ -125,14 +125,13 @@ nav a:hover {
   color: var(--white);
 }
 
-/* ヘッダー境界線：LEON INABA / ナビの真下に常時見える赤線 */
+/* HEADER SWEEP — 一本の赤い境界線の一部だけが太く光って移動 */
 header {
   overflow: hidden;
   border-bottom: 1px solid rgba(229, 34, 34, 0.46) !important;
   box-shadow: 0 1px 0 rgba(229, 34, 34, 0.08);
 }
 
-/* 元の赤線の一部だけが少し太く、強く光りながら横へ移動 */
 header::after {
   content: "";
   position: absolute;
