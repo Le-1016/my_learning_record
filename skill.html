@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SKILL｜LEON INABA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700;800;900&family=Orbitron:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20260903-0250">
+  <link rel="stylesheet" href="japanese-theme.css?v=20260903-0250">
+  <style>
+    .skill-page {
+      min-height: 100vh;
+      padding: 160px 7vw 100px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .skill-title {
+      margin: 0 0 18px;
+      color: var(--red);
+      font-family: "Orbitron", sans-serif;
+      font-size: clamp(52px, 8vw, 110px);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    .skill-lead {
+      max-width: 720px;
+      margin: 0 0 64px;
+      color: var(--white);
+      line-height: 2;
+      opacity: 0.86;
+    }
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .skill-card {
+      min-height: 220px;
+      padding: 30px;
+      border: 1px solid rgba(229,34,34,0.25);
+      background: rgba(8,8,8,0.82);
+      backdrop-filter: blur(8px);
+    }
+
+    .skill-card h2 {
+      margin: 0 0 18px;
+      color: var(--red);
+      font-family: "Orbitron", sans-serif;
+      font-size: 18px;
+      letter-spacing: 0.08em;
+    }
+
+    .skill-card p {
+      margin: 0;
+      color: var(--white);
+      font-size: 14px;
+      line-height: 2;
+      opacity: 0.82;
+    }
+
+    nav a.active {
+      color: var(--red-bright);
+      text-shadow: 0 0 10px rgba(229,34,34,0.45);
+    }
+
+    @media (max-width: 900px) {
+      .skill-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="background" aria-hidden="true">
+    <div class="grid"></div>
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+  </div>
+
+  <header>
+    <a href="index.html" class="logo">LEON INABA<span>.</span></a>
+    <nav>
+      <a href="skill.html" class="active">SKILL</a>
+      <a href="index.html#activity">ACTIVITY</a>
+      <a href="index.html#certification">CERTIFICATION</a>
+      <a href="index.html#research">RESEARCH</a>
+      <a href="index.html#career">CAREER</a>
+    </nav>
+  </header>
+
+  <main class="skill-page">
+    <h1 class="skill-title">SKILL</h1>
+    <p class="skill-lead">現在扱っている技術や、学習・制作で使用している分野をまとめています。</p>
+
+    <div class="skill-grid">
+      <section class="skill-card">
+        <h2>AI / MACHINE LEARNING</h2>
+        <p>Pythonを中心に、機械学習・深層学習・データ分析を学習しています。</p>
+      </section>
+
+      <section class="skill-card">
+        <h2>SOFTWARE DEVELOPMENT</h2>
+        <p>Python、HTML、CSSなどを使い、Webやソフトウェア制作に取り組んでいます。</p>
+      </section>
+
+      <section class="skill-card">
+        <h2>SERVER / SECURITY</h2>
+        <p>Linux、SSH、データベースなど、サーバー・セキュリティ分野の基礎を学習しています。</p>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
