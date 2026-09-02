@@ -66,9 +66,8 @@
       width: clamp(120px, 14vw, 190px);
       height: clamp(120px, 14vw, 190px);
       object-fit: contain;
-      filter: brightness(0) saturate(100%) invert(24%) sepia(94%) saturate(5107%) hue-rotate(350deg) brightness(108%) contrast(96%) drop-shadow(0 0 14px rgba(229,34,34,0.72)) drop-shadow(0 0 30px rgba(229,34,34,0.34));
+      filter: brightness(0) saturate(100%) invert(24%) sepia(94%) saturate(5107%) hue-rotate(350deg) brightness(103%) contrast(96%);
       opacity: 1;
-      transition: transform .35s ease, filter .35s ease;
     }
 
     .skill-wordmark {
@@ -77,19 +76,17 @@
       font-weight: 800;
       letter-spacing: 0.04em;
       color: var(--red-bright);
-      text-shadow: 0 0 12px rgba(229,34,34,0.9), 0 0 30px rgba(229,34,34,0.42);
-      transition: transform .35s ease, color .35s ease, text-shadow .35s ease;
     }
 
     .skill-row:hover .skill-logo {
-      transform: scale(1.045);
-      filter: brightness(0) saturate(100%) invert(24%) sepia(94%) saturate(5107%) hue-rotate(350deg) brightness(118%) contrast(98%) drop-shadow(0 0 18px rgba(229,34,34,0.88)) drop-shadow(0 0 38px rgba(229,34,34,0.46));
+      transform: none;
+      filter: brightness(0) saturate(100%) invert(24%) sepia(94%) saturate(5107%) hue-rotate(350deg) brightness(103%) contrast(96%);
     }
 
     .skill-row:hover .skill-wordmark {
-      transform: scale(1.045);
+      transform: none;
       color: var(--red-bright);
-      text-shadow: 0 0 16px rgba(229,34,34,1), 0 0 38px rgba(229,34,34,0.55);
+      text-shadow: none;
     }
 
     .skill-copy { max-width: 520px; }
