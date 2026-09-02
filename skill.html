@@ -52,13 +52,8 @@
       border-bottom: 1px solid rgba(229,34,34,0.12);
     }
 
-    .skill-row.reverse .skill-visual {
-      order: 1;
-    }
-
-    .skill-row.reverse .skill-copy {
-      order: 2;
-    }
+    .skill-row.reverse .skill-visual { order: 1; }
+    .skill-row.reverse .skill-copy { order: 2; }
 
     .skill-visual {
       display: flex;
@@ -82,9 +77,7 @@
       opacity: 1;
     }
 
-    .skill-copy {
-      max-width: 520px;
-    }
+    .skill-copy { max-width: 520px; }
 
     .skill-kicker {
       margin: 0 0 10px;
@@ -117,14 +110,8 @@
     }
 
     @media (max-width: 760px) {
-      .skill-page {
-        padding: 130px 7vw 90px;
-      }
-
-      .skill-lead {
-        margin-bottom: 54px;
-      }
-
+      .skill-page { padding: 130px 7vw 90px; }
+      .skill-lead { margin-bottom: 54px; }
       .skill-row,
       .skill-row.reverse {
         grid-template-columns: 1fr;
@@ -132,23 +119,12 @@
         min-height: auto;
         padding: 54px 0 64px;
       }
-
       .skill-row .skill-visual,
       .skill-row .skill-copy,
       .skill-row.reverse .skill-visual,
-      .skill-row.reverse .skill-copy {
-        order: initial;
-      }
-
-      .skill-visual {
-        min-height: 180px;
-        justify-content: flex-start;
-      }
-
-      .skill-logo {
-        width: 120px;
-        height: 120px;
-      }
+      .skill-row.reverse .skill-copy { order: initial; }
+      .skill-visual { min-height: 180px; justify-content: flex-start; }
+      .skill-logo { width: 120px; height: 120px; }
     }
   </style>
 </head>
@@ -172,50 +148,50 @@
 
   <main class="skill-page">
     <h1 class="skill-title">SKILL</h1>
-    <p class="skill-lead">扱っている技術を、ロゴと短い説明だけでシンプルにまとめています。</p>
+    <p class="skill-lead">現在扱っている開発・AI・サーバー環境を、実際に使っている構成に沿ってまとめています。</p>
 
     <div class="skill-list">
       <section class="skill-row">
         <div class="skill-copy">
-          <p class="skill-kicker">PROGRAMMING</p>
-          <h2>Python</h2>
-          <p>機械学習、データ処理、バックエンド処理などで中心的に使用しています。学習だけでなく、実際に動くものを作るためのメイン言語として扱っています。</p>
+          <p class="skill-kicker">SERVER OS</p>
+          <h2>Ubuntu Server 24.04 LTS</h2>
+          <p>サーバー環境のベースとして使用。各種開発ツール、データベース、Webサーバーなどを動かす基盤として扱っています。</p>
         </div>
         <div class="skill-visual">
-          <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python logo">
+          <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ubuntu/ubuntu-original.svg" alt="Ubuntu logo">
         </div>
       </section>
 
       <section class="skill-row reverse">
         <div class="skill-visual">
-          <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" alt="PyTorch logo">
+          <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python logo">
         </div>
         <div class="skill-copy">
-          <p class="skill-kicker">AI / DEEP LEARNING</p>
-          <h2>PyTorch</h2>
-          <p>ニューラルネットワークの構築や画像分類など、深層学習の実装に使用しています。モデルを動かしながら仕組みを理解することを重視しています。</p>
+          <p class="skill-kicker">AI / DATA ANALYSIS</p>
+          <h2>Python</h2>
+          <p>PyTorch、scikit-learnを用いたAI・機械学習・データ分析に使用しています。</p>
         </div>
       </section>
 
       <section class="skill-row">
         <div class="skill-copy">
-          <p class="skill-kicker">WEB</p>
-          <h2>HTML / CSS</h2>
-          <p>Webページの構造設計とスタイリングに使用しています。このポートフォリオもHTMLとCSSをベースに、自分でレイアウトや表現を調整しています。</p>
+          <p class="skill-kicker">NUMERICAL COMPUTING / RESEARCH</p>
+          <h2>Julia</h2>
+          <p>数値計算や研究用途で使用しています。</p>
         </div>
         <div class="skill-visual">
-          <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5 logo">
+          <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/julia/julia-original.svg" alt="Julia logo">
         </div>
       </section>
 
       <section class="skill-row reverse">
         <div class="skill-visual">
-          <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux logo">
+          <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg" alt="Go logo">
         </div>
         <div class="skill-copy">
-          <p class="skill-kicker">SERVER</p>
-          <h2>Linux</h2>
-          <p>サーバー操作、SSH、環境構築などを通じて扱っています。コマンド操作だけでなく、実際の運用を意識した基礎も学んでいます。</p>
+          <p class="skill-kicker">BACKEND / SERVER PROGRAMMING</p>
+          <h2>Go</h2>
+          <p>API、バックエンド、サーバープログラムの開発に使用しています。</p>
         </div>
       </section>
 
@@ -223,10 +199,43 @@
         <div class="skill-copy">
           <p class="skill-kicker">DATABASE</p>
           <h2>PostgreSQL</h2>
-          <p>データの保存、取得、集計などに使用しています。Pythonと組み合わせ、収集したデータを扱う仕組みの構築にも取り組んでいます。</p>
+          <p>SQLによるデータ操作や、アプリケーションのデータ保存に使用しています。</p>
         </div>
         <div class="skill-visual">
           <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL logo">
+        </div>
+      </section>
+
+      <section class="skill-row reverse">
+        <div class="skill-visual">
+          <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker logo">
+        </div>
+        <div class="skill-copy">
+          <p class="skill-kicker">CONTAINER</p>
+          <h2>Docker</h2>
+          <p>AIアプリ、データベース、Webサービスをコンテナ化して動かすために使用しています。</p>
+        </div>
+      </section>
+
+      <section class="skill-row">
+        <div class="skill-copy">
+          <p class="skill-kicker">VERSION CONTROL</p>
+          <h2>Git / GitHub</h2>
+          <p>ソースコードのバージョン管理とGitHubでの公開・管理に使用しています。</p>
+        </div>
+        <div class="skill-visual">
+          <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git logo">
+        </div>
+      </section>
+
+      <section class="skill-row reverse">
+        <div class="skill-visual">
+          <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg" alt="Nginx logo">
+        </div>
+        <div class="skill-copy">
+          <p class="skill-kicker">WEB SERVER</p>
+          <h2>Nginx</h2>
+          <p>Webサーバーとして扱い、ポートフォリオなどのWebコンテンツ公開に使用しています。</p>
         </div>
       </section>
     </div>
