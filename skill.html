@@ -78,6 +78,11 @@
       color: var(--red-bright);
     }
 
+    .skill-wordmark.tableau {
+      font-size: clamp(46px, 7vw, 96px);
+      letter-spacing: 0.02em;
+    }
+
     .skill-row:hover .skill-logo {
       transform: none;
       filter: brightness(0) saturate(100%) invert(24%) sepia(94%) saturate(5107%) hue-rotate(350deg) brightness(103%) contrast(96%);
@@ -139,6 +144,7 @@
       .skill-visual { min-height: 180px; justify-content: flex-start; }
       .skill-logo { width: 120px; height: 120px; }
       .skill-wordmark { font-size: 72px; }
+      .skill-wordmark.tableau { font-size: 52px; }
     }
   </style>
 </head>
@@ -211,34 +217,45 @@
 
       <section class="skill-row">
         <div class="skill-copy">
-          <p class="skill-kicker">CONTAINER</p>
-          <h2>Docker</h2>
-          <p>AIアプリ、データベース、Webサービスをコンテナ化して動かすために使用しています。</p>
+          <p class="skill-kicker">DATA VISUALIZATION</p>
+          <h2>Tableau</h2>
+          <p>データをグラフやダッシュボードとして可視化し、分析結果や傾向を分かりやすく整理・共有するために使用しています。</p>
         </div>
         <div class="skill-visual">
-          <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker logo">
+          <div class="skill-wordmark tableau" aria-label="Tableau">Tableau</div>
         </div>
       </section>
 
       <section class="skill-row reverse">
         <div class="skill-visual">
-          <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unrealengine/unrealengine-original.svg" alt="Unreal Engine logo">
+          <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker logo">
         </div>
         <div class="skill-copy">
-          <p class="skill-kicker">SELF-STUDY / GAME ENGINE</p>
-          <h2>Unreal Engine</h2>
-          <p>現在、独学で学習中です。ゲームエンジンの基本操作やリアルタイム3D表現を中心に、実際に触りながら理解を深めています。</p>
+          <p class="skill-kicker">CONTAINER</p>
+          <h2>Docker</h2>
+          <p>AIアプリ、データベース、Webサービスをコンテナ化して動かすために使用しています。</p>
         </div>
       </section>
 
       <section class="skill-row">
         <div class="skill-copy">
+          <p class="skill-kicker">SELF-STUDY / GAME ENGINE</p>
+          <h2>Unreal Engine</h2>
+          <p>現在、独学で学習中です。ゲームエンジンの基本操作やリアルタイム3D表現を中心に、実際に触りながら理解を深めています。</p>
+        </div>
+        <div class="skill-visual">
+          <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unrealengine/unrealengine-original.svg" alt="Unreal Engine logo">
+        </div>
+      </section>
+
+      <section class="skill-row reverse">
+        <div class="skill-visual">
+          <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git logo">
+        </div>
+        <div class="skill-copy">
           <p class="skill-kicker">VERSION CONTROL</p>
           <h2>Git / GitHub</h2>
           <p>ソースコードのバージョン管理とGitHubでの公開・管理に使用しています。</p>
-        </div>
-        <div class="skill-visual">
-          <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git logo">
         </div>
       </section>
     </div>
