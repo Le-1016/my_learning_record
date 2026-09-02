@@ -3,93 +3,6 @@
 body {
   font-family: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif;
   color: var(--white);
-  background:
-    radial-gradient(circle at 82% 18%, rgba(229, 34, 34, 0.18), transparent 30%),
-    radial-gradient(circle at 15% 80%, rgba(120, 0, 0, 0.16), transparent 28%),
-    linear-gradient(135deg, #020202 0%, #050000 45%, #0b0000 100%);
-}
-
-/* 背景本体：黒と赤がゆっくり混ざる */
-.background {
-  background:
-    linear-gradient(120deg, rgba(0,0,0,0.98) 0%, rgba(7,0,0,0.96) 48%, rgba(22,0,0,0.9) 100%);
-  overflow: hidden;
-}
-
-/* 黒地では赤い模様 */
-.background::before {
-  content: "";
-  position: absolute;
-  inset: -25%;
-  background-image:
-    linear-gradient(rgba(229,34,34,0.095) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(229,34,34,0.095) 1px, transparent 1px),
-    repeating-linear-gradient(135deg, transparent 0 26px, rgba(229,34,34,0.035) 27px 28px, transparent 29px 56px);
-  background-size: 64px 64px, 64px 64px, 80px 80px;
-  animation: redPatternDrift 18s linear infinite;
-  opacity: 0.88;
-}
-
-/* 赤い領域では黒い模様 */
-.background::after {
-  content: "";
-  position: absolute;
-  width: 72vw;
-  height: 72vw;
-  min-width: 760px;
-  min-height: 760px;
-  right: -18vw;
-  top: -16vw;
-  border-radius: 50%;
-  background:
-    repeating-radial-gradient(circle at center, rgba(0,0,0,0.55) 0 2px, transparent 3px 42px),
-    repeating-conic-gradient(from 0deg, rgba(0,0,0,0.16) 0deg 1deg, transparent 1deg 12deg),
-    radial-gradient(circle at center, rgba(229,34,34,0.42) 0%, rgba(135,0,0,0.30) 42%, rgba(55,0,0,0.08) 68%, transparent 74%);
-  box-shadow: 0 0 130px rgba(229,34,34,0.12);
-  animation: blackPatternSpin 38s linear infinite, redFieldFloat 10s ease-in-out infinite alternate;
-  opacity: 0.9;
-}
-
-.grid {
-  background-image:
-    linear-gradient(rgba(229,34,34,0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(229,34,34,0.08) 1px, transparent 1px);
-  background-size: 60px 60px;
-  opacity: 0.6;
-  animation: gridSlide 14s linear infinite;
-}
-
-.glow {
-  background: rgba(229, 34, 34, 0.22);
-  filter: blur(110px);
-  animation: glowBreath 6s ease-in-out infinite alternate;
-}
-
-.glow-1 {
-  width: 760px;
-  height: 760px;
-  top: -280px;
-  right: -220px;
-}
-
-.glow-2 {
-  width: 620px;
-  height: 620px;
-  left: -280px;
-  top: 62vh;
-  opacity: 0.7;
-  animation-delay: -3s;
-}
-
-header {
-  background: linear-gradient(90deg, rgba(0,0,0,0.94), rgba(14,0,0,0.9));
-  border-bottom: 1px solid rgba(229,34,34,0.18);
-}
-
-.hero {
-  background:
-    linear-gradient(90deg, rgba(0,0,0,0.22), transparent 48%),
-    radial-gradient(circle at 78% 48%, rgba(229,34,34,0.12), transparent 32%);
 }
 
 .logo,
@@ -115,7 +28,7 @@ nav a,
   font-weight: 900;
   line-height: 1.05;
   letter-spacing: -0.055em;
-  text-shadow: 0 0 28px rgba(229, 34, 34, 0.2);
+  text-shadow: 0 0 24px rgba(229, 34, 34, 0.12);
 }
 
 .hero h1 span {
@@ -134,28 +47,12 @@ nav a,
   font-size: 15px;
   line-height: 2;
   letter-spacing: 0.04em;
-  opacity: 0.92;
+  opacity: 0.88;
 }
 
 .section-heading h2 {
   font-weight: 800;
   letter-spacing: -0.03em;
-}
-
-.work-card,
-.about-box {
-  background:
-    repeating-linear-gradient(135deg, rgba(0,0,0,0.08) 0 14px, rgba(229,34,34,0.025) 14px 15px, transparent 15px 30px),
-    linear-gradient(145deg, rgba(18,0,0,0.72), rgba(5,5,5,0.95));
-  border-color: rgba(229,34,34,0.2);
-  background-size: 48px 48px, auto;
-  animation: cardPatternShift 20s linear infinite;
-}
-
-.work-card:hover {
-  background:
-    repeating-linear-gradient(135deg, rgba(0,0,0,0.16) 0 14px, rgba(229,34,34,0.05) 14px 15px, transparent 15px 30px),
-    linear-gradient(145deg, rgba(30,0,0,0.88), rgba(8,8,8,0.97));
 }
 
 .work-content h3 {
@@ -167,14 +64,13 @@ nav a,
   font-size: 13px;
   line-height: 1.9;
   letter-spacing: 0.02em;
-  opacity: 0.88;
+  opacity: 0.82;
 }
 
 .about-box {
   padding: 48px;
   display: flex;
   align-items: center;
-  box-shadow: inset 0 0 70px rgba(90,0,0,0.12);
 }
 
 .about-box p {
@@ -182,7 +78,7 @@ nav a,
   margin: 0;
   font-size: 16px;
   line-height: 2.1;
-  opacity: 0.92;
+  opacity: 0.9;
 }
 
 /* ナビゲーション：赤文字・明朝体・英大文字 */
@@ -197,62 +93,11 @@ nav a {
 
 nav a:hover {
   color: var(--red-bright);
-  text-shadow: 0 0 10px rgba(229, 34, 34, 0.5);
+  text-shadow: 0 0 10px rgba(229, 34, 34, 0.45);
 }
 
 .hero-button {
   color: var(--white);
-  border-color: rgba(229,34,34,0.3);
-  background: rgba(20,0,0,0.22);
-}
-
-.hero-button:hover {
-  background: rgba(229,34,34,0.09);
-}
-
-footer {
-  background: linear-gradient(90deg, #020202, #0c0000);
-}
-
-@keyframes redPatternDrift {
-  from { transform: translate3d(0,0,0); }
-  to { transform: translate3d(64px,64px,0); }
-}
-
-@keyframes blackPatternSpin {
-  from { transform: rotate(0deg) scale(1); }
-  to { transform: rotate(360deg) scale(1); }
-}
-
-@keyframes redFieldFloat {
-  from { right: -18vw; top: -16vw; }
-  to { right: -14vw; top: -12vw; }
-}
-
-@keyframes gridSlide {
-  from { background-position: 0 0, 0 0; }
-  to { background-position: 60px 60px, 60px 60px; }
-}
-
-@keyframes glowBreath {
-  from { opacity: 0.42; transform: scale(0.92); }
-  to { opacity: 0.86; transform: scale(1.12); }
-}
-
-@keyframes cardPatternShift {
-  from { background-position: 0 0, 0 0; }
-  to { background-position: 96px 48px, 0 0; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .background::before,
-  .background::after,
-  .grid,
-  .glow,
-  .work-card,
-  .about-box {
-    animation: none !important;
-  }
 }
 
 @media (max-width: 600px) {
@@ -262,10 +107,5 @@ footer {
 
   .about-box {
     padding: 28px;
-  }
-
-  .background::after {
-    right: -520px;
-    top: -180px;
   }
 }
