@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CERTIFICATION｜LEON INABA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700;800;900&family=Orbitron:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20260903-0410">
+  <link rel="stylesheet" href="japanese-theme.css?v=20260903-0410">
+  <style>
+    .cert-page {
+      min-height: 100vh;
+      padding: 150px 7vw 120px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cert-title {
+      margin: 0 0 16px;
+      color: var(--red);
+      font-family: "Orbitron", sans-serif;
+      font-size: clamp(42px, 6.5vw, 88px);
+      font-weight: 800;
+      letter-spacing: 0.07em;
+    }
+
+    .cert-lead {
+      max-width: 760px;
+      margin: 0 0 82px;
+      color: var(--white);
+      line-height: 2;
+      opacity: 0.8;
+    }
+
+    .cert-list {
+      max-width: 1100px;
+      margin: 0 auto;
+      border-bottom: 1px solid rgba(229,34,34,0.16);
+    }
+
+    .cert-item {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: clamp(28px, 5vw, 72px);
+      padding: 54px 0;
+      border-top: 1px solid rgba(229,34,34,0.16);
+      align-items: start;
+    }
+
+    .cert-status {
+      color: var(--red);
+      font-family: "Orbitron", sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      padding-top: 8px;
+    }
+
+    .cert-copy h2 {
+      margin: 0 0 14px;
+      color: var(--red);
+      font-family: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif;
+      font-size: clamp(26px, 3vw, 40px);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .cert-copy p {
+      margin: 0;
+      color: var(--white);
+      font-size: 15px;
+      line-height: 2;
+      opacity: 0.8;
+    }
+
+    nav a.active {
+      color: var(--red-bright);
+      text-shadow: 0 0 10px rgba(229,34,34,0.45);
+    }
+
+    @media (max-width: 760px) {
+      .cert-page { padding: 130px 7vw 90px; }
+      .cert-lead { margin-bottom: 52px; }
+      .cert-item {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 42px 0;
+      }
+      .cert-status { padding-top: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="background" aria-hidden="true">
+    <div class="grid"></div>
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+  </div>
+
+  <header>
+    <a href="index.html" class="logo">LEON INABA<span>.</span></a>
+    <nav>
+      <a href="skill.html">SKILL</a>
+      <a href="index.html#activity">ACTIVITY</a>
+      <a href="certification.html" class="active">CERTIFICATION</a>
+      <a href="index.html#research">RESEARCH</a>
+      <a href="career.html">CAREER</a>
+    </nav>
+  </header>
+
+  <main class="cert-page">
+    <h1 class="cert-title">CERTIFICATION</h1>
+    <p class="cert-lead">資格・認定試験に向けた学習状況と受験予定をまとめています。</p>
+
+    <div class="cert-list">
+      <section class="cert-item">
+        <div class="cert-status">2026 / STUDYING</div>
+        <div class="cert-copy">
+          <h2>JDLA G検定</h2>
+          <p>AI・ディープラーニングに関する基礎知識と活用能力を体系的に確認するため、受験に向けて学習中です。</p>
+        </div>
+      </section>
+
+      <section class="cert-item">
+        <div class="cert-status">2026 / PLANNED</div>
+        <div class="cert-copy">
+          <h2>JDLA E資格</h2>
+          <p>ディープラーニングの理論と実装力を確認する資格として、認定プログラムでの学習とあわせて受験を予定しています。</p>
+        </div>
+      </section>
+
+      <section class="cert-item">
+        <div class="cert-status">2027 / NEXT</div>
+        <div class="cert-copy">
+          <h2>IPA 情報処理技術者試験</h2>
+          <p>次の段階として、情報処理技術者試験への挑戦を予定しています。AI分野だけでなく、情報技術全体の基礎と応用力も強化していきます。</p>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
