@@ -7,8 +7,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700;800;900&family=Orbitron:wght@500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260903-0315">
-  <link rel="stylesheet" href="japanese-theme.css?v=20260903-0315">
+  <link rel="stylesheet" href="style.css?v=20260903-0324">
+  <link rel="stylesheet" href="japanese-theme.css?v=20260903-0324">
   <style>
     .career-page {
       min-height: 100vh;
@@ -35,36 +35,61 @@
     }
 
     .career-list {
-      max-width: 1040px;
+      max-width: 1180px;
       margin: 0 auto;
     }
 
     .career-row {
+      min-height: 390px;
       display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: clamp(30px, 6vw, 90px);
-      padding: 58px 0;
-      border-top: 1px solid rgba(229,34,34,0.14);
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: clamp(42px, 7vw, 110px);
+      border-top: 1px solid rgba(229,34,34,0.18);
     }
 
     .career-row:last-child {
-      border-bottom: 1px solid rgba(229,34,34,0.14);
+      border-bottom: 1px solid rgba(229,34,34,0.18);
+    }
+
+    .career-row.reverse .career-visual { order: 1; }
+    .career-row.reverse .career-copy { order: 2; }
+
+    .career-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 280px;
     }
 
     .career-phase {
+      font-family: "Orbitron", sans-serif;
+      font-size: clamp(56px, 8vw, 120px);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: var(--red);
+      line-height: 1;
+    }
+
+    .career-copy {
+      max-width: 520px;
+    }
+
+    .career-kicker {
+      margin: 0 0 10px;
       color: var(--red);
       font-family: "Orbitron", sans-serif;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.15em;
+      font-size: 12px;
+      letter-spacing: 0.18em;
     }
 
     .career-copy h2 {
-      margin: 0 0 18px;
+      margin: 0 0 20px;
       color: var(--red);
       font-family: "Orbitron", sans-serif;
-      font-size: clamp(26px, 3vw, 40px);
+      font-size: clamp(28px, 3vw, 42px);
       letter-spacing: 0.04em;
+      font-weight: 700;
     }
 
     .career-copy p {
@@ -72,7 +97,7 @@
       color: var(--white);
       font-size: 15px;
       line-height: 2.05;
-      opacity: 0.8;
+      opacity: 0.82;
     }
 
     nav a.active {
@@ -83,10 +108,29 @@
     @media (max-width: 760px) {
       .career-page { padding: 130px 7vw 90px; }
       .career-lead { margin-bottom: 54px; }
-      .career-row {
+
+      .career-row,
+      .career-row.reverse {
         grid-template-columns: 1fr;
-        gap: 14px;
-        padding: 44px 0;
+        gap: 8px;
+        min-height: auto;
+        padding: 54px 0 64px;
+      }
+
+      .career-row .career-visual,
+      .career-row .career-copy,
+      .career-row.reverse .career-visual,
+      .career-row.reverse .career-copy {
+        order: initial;
+      }
+
+      .career-visual {
+        min-height: 150px;
+        justify-content: flex-start;
+      }
+
+      .career-phase {
+        font-size: clamp(48px, 18vw, 78px);
       }
     }
   </style>
@@ -115,26 +159,35 @@
 
     <div class="career-list">
       <section class="career-row">
-        <div class="career-phase">NOW</div>
         <div class="career-copy">
+          <p class="career-kicker">CURRENT PHASE</p>
           <h2>Learn & Build</h2>
           <p>AI・ソフトウェア開発を中心に、授業だけに限らず、自分で手を動かしながら技術を学んでいます。学習した内容は制作や実験を通して確かめることを重視しています。</p>
         </div>
+        <div class="career-visual">
+          <div class="career-phase">NOW</div>
+        </div>
       </section>
 
-      <section class="career-row">
-        <div class="career-phase">NEXT</div>
+      <section class="career-row reverse">
+        <div class="career-visual">
+          <div class="career-phase">NEXT</div>
+        </div>
         <div class="career-copy">
+          <p class="career-kicker">NEXT STEP</p>
           <h2>Research & Practice</h2>
           <p>AI・データ・ソフトウェアの知識をさらに深め、研究や実践的な開発につなげていくことを目標にしています。単に技術を知るだけでなく、実際の課題に使える形にすることを目指します。</p>
         </div>
       </section>
 
       <section class="career-row">
-        <div class="career-phase">FUTURE</div>
         <div class="career-copy">
+          <p class="career-kicker">LONG-TERM</p>
           <h2>AI Engineer</h2>
           <p>AIを中心とした技術分野で、開発・研究・システム設計に関わることを目指しています。技術そのものだけでなく、それをどう社会で活用するかまで考えられるエンジニアを目標にしています。</p>
+        </div>
+        <div class="career-visual">
+          <div class="career-phase">FUTURE</div>
         </div>
       </section>
     </div>
