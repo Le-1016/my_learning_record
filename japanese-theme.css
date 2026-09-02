@@ -29,17 +29,47 @@ nav a,
 }
 
 .hero h1 {
+  position: relative;
   font-size: clamp(44px, 6.2vw, 96px);
   font-weight: 800;
   line-height: 1.02;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  white-space: nowrap;
   text-shadow: 0 0 24px rgba(229, 34, 34, 0.16);
+  animation: cyberTextNoise 6s steps(1, end) infinite;
 }
 
 .hero h1 span {
-  display: inline-block;
+  display: inline;
   letter-spacing: 0.08em;
+}
+
+/* 控えめなサイバーノイズ */
+.hero-content::after {
+  content: "";
+  position: absolute;
+  left: -3%;
+  top: -10%;
+  width: 106%;
+  height: 120%;
+  pointer-events: none;
+  opacity: 0.12;
+  mix-blend-mode: screen;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0 3px,
+      rgba(229, 34, 34, 0.16) 3px 4px,
+      transparent 4px 8px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 34px,
+      rgba(255,255,255,0.035) 34px 35px,
+      transparent 35px 72px
+    );
+  animation: cyberNoiseShift 4.8s steps(2, end) infinite;
 }
 
 /* 文章は白 */
@@ -109,9 +139,43 @@ nav a:hover {
   color: var(--white);
 }
 
+@keyframes cyberTextNoise {
+  0%, 88%, 100% {
+    transform: translate(0, 0);
+    text-shadow: 0 0 24px rgba(229, 34, 34, 0.16);
+  }
+  89% {
+    transform: translate(-1px, 0);
+    text-shadow: 2px 0 rgba(255, 35, 35, 0.28), -2px 0 rgba(255,255,255,0.06);
+  }
+  90% {
+    transform: translate(1px, 0);
+    text-shadow: -2px 0 rgba(255, 35, 35, 0.25), 2px 0 rgba(255,255,255,0.05);
+  }
+  91% {
+    transform: translate(0, 0);
+    text-shadow: 0 0 24px rgba(229, 34, 34, 0.16);
+  }
+}
+
+@keyframes cyberNoiseShift {
+  0%, 100% { transform: translate(0, 0); opacity: 0.08; }
+  25% { transform: translate(2px, -1px); opacity: 0.12; }
+  50% { transform: translate(-2px, 1px); opacity: 0.07; }
+  75% { transform: translate(1px, 0); opacity: 0.11; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero h1,
+  .hero-content::after {
+    animation: none !important;
+  }
+}
+
 @media (max-width: 600px) {
   .hero h1 {
-    font-size: clamp(36px, 11vw, 58px);
+    font-size: clamp(30px, 9vw, 46px);
+    white-space: normal;
   }
 
   .about-box {
