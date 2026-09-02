@@ -78,9 +78,37 @@
       color: var(--red-bright);
     }
 
+    .sql-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    .sql-logo {
+      width: clamp(100px, 11vw, 150px);
+      height: clamp(100px, 11vw, 150px);
+      object-fit: contain;
+      filter: none;
+      opacity: 0.95;
+    }
+
+    .sql-label {
+      font-family: "Orbitron", sans-serif;
+      font-size: clamp(42px, 6vw, 78px);
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      color: var(--red-bright);
+    }
+
     .skill-row:hover .skill-logo {
       transform: none;
       filter: brightness(0) saturate(100%) invert(24%) sepia(94%) saturate(5107%) hue-rotate(350deg) brightness(103%) contrast(96%);
+    }
+
+    .skill-row:hover .sql-logo {
+      transform: none;
+      filter: none;
     }
 
     .skill-row:hover .skill-wordmark {
@@ -139,6 +167,9 @@
       .skill-visual { min-height: 180px; justify-content: flex-start; }
       .skill-logo { width: 120px; height: 120px; }
       .skill-wordmark { font-size: 72px; }
+      .sql-visual { gap: 16px; }
+      .sql-logo { width: 92px; height: 92px; }
+      .sql-label { font-size: 46px; }
     }
   </style>
 </head>
@@ -199,8 +230,9 @@
       </section>
 
       <section class="skill-row reverse">
-        <div class="skill-visual">
-          <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" alt="Azure SQL Database logo">
+        <div class="skill-visual sql-visual">
+          <img class="sql-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" alt="SQL database logo">
+          <div class="sql-label" aria-label="SQL">SQL</div>
         </div>
         <div class="skill-copy">
           <p class="skill-kicker">DATABASE</p>
