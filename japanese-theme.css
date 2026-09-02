@@ -108,6 +108,80 @@ nav a:hover {
   color: var(--white);
 }
 
+/* 全ページ共通：細い赤線の上を光が静かに走る */
+.background::after {
+  content: "";
+  position: fixed;
+  left: 0;
+  top: 72%;
+  width: 100%;
+  height: 1px;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.72;
+  background:
+    linear-gradient(90deg,
+      rgba(229, 34, 34, 0.02) 0%,
+      rgba(229, 34, 34, 0.10) 35%,
+      rgba(229, 34, 34, 0.16) 50%,
+      rgba(229, 34, 34, 0.10) 65%,
+      rgba(229, 34, 34, 0.02) 100%);
+  overflow: hidden;
+}
+
+.background::before {
+  content: "";
+  position: fixed;
+  top: calc(72% - 1px);
+  left: -180px;
+  width: 150px;
+  height: 3px;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: 999px;
+  opacity: 0;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255, 55, 55, 0.08) 16%,
+    rgba(255, 78, 78, 0.75) 46%,
+    rgba(255, 125, 125, 1) 52%,
+    rgba(255, 78, 78, 0.75) 58%,
+    rgba(255, 55, 55, 0.08) 84%,
+    transparent 100%);
+  box-shadow:
+    0 0 5px rgba(255, 55, 55, 0.50),
+    0 0 12px rgba(229, 34, 34, 0.24);
+  animation: globalRedSweep 7.4s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+@keyframes globalRedSweep {
+  0% {
+    left: -180px;
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.9;
+  }
+  82% {
+    opacity: 0.9;
+  }
+  100% {
+    left: calc(100% + 180px);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .background::before {
+    animation: none;
+    display: none;
+  }
+
+  .background::after {
+    opacity: 0.28;
+  }
+}
+
 @media (max-width: 600px) {
   .hero h1 {
     font-size: clamp(30px, 9vw, 46px);
@@ -116,5 +190,13 @@ nav a:hover {
 
   .about-box {
     padding: 28px;
+  }
+
+  .background::after {
+    top: 76%;
+  }
+
+  .background::before {
+    top: calc(76% - 1px);
   }
 }
