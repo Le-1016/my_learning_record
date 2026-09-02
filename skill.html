@@ -7,61 +7,108 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700;800;900&family=Orbitron:wght@500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260903-0250">
-  <link rel="stylesheet" href="japanese-theme.css?v=20260903-0250">
+  <link rel="stylesheet" href="style.css?v=20260903-0255">
+  <link rel="stylesheet" href="japanese-theme.css?v=20260903-0255">
   <style>
     .skill-page {
       min-height: 100vh;
-      padding: 160px 7vw 100px;
+      padding: 150px 7vw 120px;
       position: relative;
       z-index: 2;
     }
 
     .skill-title {
-      margin: 0 0 18px;
+      margin: 0 0 16px;
       color: var(--red);
       font-family: "Orbitron", sans-serif;
-      font-size: clamp(52px, 8vw, 110px);
+      font-size: clamp(48px, 7vw, 96px);
       font-weight: 800;
       letter-spacing: 0.08em;
     }
 
     .skill-lead {
-      max-width: 720px;
-      margin: 0 0 64px;
+      max-width: 760px;
+      margin: 0 0 90px;
       color: var(--white);
       line-height: 2;
-      opacity: 0.86;
+      opacity: 0.8;
     }
 
-    .skill-grid {
+    .skill-list {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .skill-row {
+      min-height: 420px;
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: clamp(42px, 7vw, 110px);
+      border-top: 1px solid rgba(229,34,34,0.12);
     }
 
-    .skill-card {
-      min-height: 220px;
-      padding: 30px;
-      border: 1px solid rgba(229,34,34,0.25);
-      background: rgba(8,8,8,0.82);
-      backdrop-filter: blur(8px);
+    .skill-row:last-child {
+      border-bottom: 1px solid rgba(229,34,34,0.12);
     }
 
-    .skill-card h2 {
-      margin: 0 0 18px;
+    .skill-row.reverse .skill-visual {
+      order: 1;
+    }
+
+    .skill-row.reverse .skill-copy {
+      order: 2;
+    }
+
+    .skill-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 300px;
+    }
+
+    .skill-logo {
+      width: clamp(120px, 14vw, 190px);
+      height: clamp(120px, 14vw, 190px);
+      object-fit: contain;
+      filter: grayscale(1) brightness(1.2) contrast(1.15);
+      opacity: 0.92;
+      transition: transform .35s ease, filter .35s ease, opacity .35s ease;
+    }
+
+    .skill-row:hover .skill-logo {
+      transform: scale(1.045);
+      filter: grayscale(0.15) brightness(1.05) contrast(1.1) drop-shadow(0 0 16px rgba(229,34,34,0.16));
+      opacity: 1;
+    }
+
+    .skill-copy {
+      max-width: 520px;
+    }
+
+    .skill-kicker {
+      margin: 0 0 10px;
       color: var(--red);
       font-family: "Orbitron", sans-serif;
-      font-size: 18px;
-      letter-spacing: 0.08em;
+      font-size: 12px;
+      letter-spacing: 0.18em;
     }
 
-    .skill-card p {
+    .skill-copy h2 {
+      margin: 0 0 20px;
+      color: var(--white);
+      font-family: "Orbitron", sans-serif;
+      font-size: clamp(28px, 3vw, 42px);
+      letter-spacing: 0.04em;
+      font-weight: 700;
+    }
+
+    .skill-copy p {
       margin: 0;
       color: var(--white);
-      font-size: 14px;
-      line-height: 2;
-      opacity: 0.82;
+      font-size: 15px;
+      line-height: 2.05;
+      opacity: 0.78;
     }
 
     nav a.active {
@@ -69,8 +116,39 @@
       text-shadow: 0 0 10px rgba(229,34,34,0.45);
     }
 
-    @media (max-width: 900px) {
-      .skill-grid { grid-template-columns: 1fr; }
+    @media (max-width: 760px) {
+      .skill-page {
+        padding: 130px 7vw 90px;
+      }
+
+      .skill-lead {
+        margin-bottom: 54px;
+      }
+
+      .skill-row,
+      .skill-row.reverse {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        min-height: auto;
+        padding: 54px 0 64px;
+      }
+
+      .skill-row .skill-visual,
+      .skill-row .skill-copy,
+      .skill-row.reverse .skill-visual,
+      .skill-row.reverse .skill-copy {
+        order: initial;
+      }
+
+      .skill-visual {
+        min-height: 180px;
+        justify-content: flex-start;
+      }
+
+      .skill-logo {
+        width: 120px;
+        height: 120px;
+      }
     }
   </style>
 </head>
@@ -94,22 +172,62 @@
 
   <main class="skill-page">
     <h1 class="skill-title">SKILL</h1>
-    <p class="skill-lead">現在扱っている技術や、学習・制作で使用している分野をまとめています。</p>
+    <p class="skill-lead">扱っている技術を、ロゴと短い説明だけでシンプルにまとめています。</p>
 
-    <div class="skill-grid">
-      <section class="skill-card">
-        <h2>AI / MACHINE LEARNING</h2>
-        <p>Pythonを中心に、機械学習・深層学習・データ分析を学習しています。</p>
+    <div class="skill-list">
+      <section class="skill-row">
+        <div class="skill-copy">
+          <p class="skill-kicker">PROGRAMMING</p>
+          <h2>Python</h2>
+          <p>機械学習、データ処理、バックエンド処理などで中心的に使用しています。学習だけでなく、実際に動くものを作るためのメイン言語として扱っています。</p>
+        </div>
+        <div class="skill-visual">
+          <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python logo">
+        </div>
       </section>
 
-      <section class="skill-card">
-        <h2>SOFTWARE DEVELOPMENT</h2>
-        <p>Python、HTML、CSSなどを使い、Webやソフトウェア制作に取り組んでいます。</p>
+      <section class="skill-row reverse">
+        <div class="skill-visual">
+          <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" alt="PyTorch logo">
+        </div>
+        <div class="skill-copy">
+          <p class="skill-kicker">AI / DEEP LEARNING</p>
+          <h2>PyTorch</h2>
+          <p>ニューラルネットワークの構築や画像分類など、深層学習の実装に使用しています。モデルを動かしながら仕組みを理解することを重視しています。</p>
+        </div>
       </section>
 
-      <section class="skill-card">
-        <h2>SERVER / SECURITY</h2>
-        <p>Linux、SSH、データベースなど、サーバー・セキュリティ分野の基礎を学習しています。</p>
+      <section class="skill-row">
+        <div class="skill-copy">
+          <p class="skill-kicker">WEB</p>
+          <h2>HTML / CSS</h2>
+          <p>Webページの構造設計とスタイリングに使用しています。このポートフォリオもHTMLとCSSをベースに、自分でレイアウトや表現を調整しています。</p>
+        </div>
+        <div class="skill-visual">
+          <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5 logo">
+        </div>
+      </section>
+
+      <section class="skill-row reverse">
+        <div class="skill-visual">
+          <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux logo">
+        </div>
+        <div class="skill-copy">
+          <p class="skill-kicker">SERVER</p>
+          <h2>Linux</h2>
+          <p>サーバー操作、SSH、環境構築などを通じて扱っています。コマンド操作だけでなく、実際の運用を意識した基礎も学んでいます。</p>
+        </div>
+      </section>
+
+      <section class="skill-row">
+        <div class="skill-copy">
+          <p class="skill-kicker">DATABASE</p>
+          <h2>PostgreSQL</h2>
+          <p>データの保存、取得、集計などに使用しています。Pythonと組み合わせ、収集したデータを扱う仕組みの構築にも取り組んでいます。</p>
+        </div>
+        <div class="skill-visual">
+          <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL logo">
+        </div>
       </section>
     </div>
   </main>
