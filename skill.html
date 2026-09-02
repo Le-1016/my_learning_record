@@ -66,8 +66,8 @@
       width: clamp(120px, 14vw, 190px);
       height: clamp(120px, 14vw, 190px);
       object-fit: contain;
-      filter: grayscale(1) brightness(1.2) contrast(1.15);
-      opacity: 0.92;
+      filter: brightness(0) saturate(100%) invert(24%) sepia(94%) saturate(5107%) hue-rotate(350deg) brightness(95%) contrast(91%) drop-shadow(0 0 10px rgba(229,34,34,0.38));
+      opacity: 0.95;
       transition: transform .35s ease, filter .35s ease, opacity .35s ease;
     }
 
@@ -76,20 +76,21 @@
       font-size: clamp(72px, 10vw, 150px);
       font-weight: 800;
       letter-spacing: 0.04em;
-      color: rgba(255,255,255,0.88);
+      color: var(--red);
+      text-shadow: 0 0 12px rgba(229,34,34,0.32);
       transition: transform .35s ease, color .35s ease, text-shadow .35s ease;
     }
 
     .skill-row:hover .skill-logo {
       transform: scale(1.045);
-      filter: grayscale(0.15) brightness(1.05) contrast(1.1) drop-shadow(0 0 16px rgba(229,34,34,0.16));
+      filter: brightness(0) saturate(100%) invert(24%) sepia(94%) saturate(5107%) hue-rotate(350deg) brightness(112%) contrast(96%) drop-shadow(0 0 18px rgba(229,34,34,0.68));
       opacity: 1;
     }
 
     .skill-row:hover .skill-wordmark {
       transform: scale(1.045);
       color: var(--red-bright);
-      text-shadow: 0 0 18px rgba(229,34,34,0.18);
+      text-shadow: 0 0 22px rgba(229,34,34,0.58);
     }
 
     .skill-copy { max-width: 520px; }
@@ -104,11 +105,12 @@
 
     .skill-copy h2 {
       margin: 0 0 20px;
-      color: var(--white);
+      color: var(--red);
       font-family: "Orbitron", sans-serif;
       font-size: clamp(28px, 3vw, 42px);
       letter-spacing: 0.04em;
       font-weight: 700;
+      text-shadow: 0 0 10px rgba(229,34,34,0.16);
     }
 
     .skill-copy p {
