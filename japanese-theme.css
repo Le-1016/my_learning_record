@@ -125,11 +125,11 @@ nav a:hover {
   color: var(--white);
 }
 
-/* HEADER SWEEP — 赤一色の太い光が境界線を移動 */
+/* HEADER SWEEP — 細い赤ライン上を、短い高輝度セグメントだけが滑る */
 header {
   overflow: hidden;
-  border-bottom: 1px solid rgba(229, 34, 34, 0.46) !important;
-  box-shadow: 0 1px 0 rgba(229, 34, 34, 0.08);
+  border-bottom: 1px solid rgba(229, 34, 34, 0.38) !important;
+  box-shadow: none;
 }
 
 header::after {
@@ -137,32 +137,31 @@ header::after {
   position: absolute;
   left: 0;
   bottom: -1px;
-  width: 190px;
-  height: 5px;
+  width: 132px;
+  height: 2px;
   pointer-events: none;
   border-radius: 999px;
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(229, 34, 34, 0.08) 10%,
-    rgba(229, 34, 34, 0.55) 28%,
-    var(--red) 50%,
-    rgba(229, 34, 34, 0.55) 72%,
-    rgba(229, 34, 34, 0.08) 90%,
+    rgba(229, 34, 34, 0.18) 16%,
+    rgba(229, 34, 34, 0.82) 38%,
+    #ff3030 50%,
+    rgba(229, 34, 34, 0.82) 62%,
+    rgba(229, 34, 34, 0.18) 84%,
     transparent 100%
   );
-  box-shadow:
-    0 0 4px rgba(229, 34, 34, 0.72),
-    0 0 9px rgba(229, 34, 34, 0.34);
-  animation: headerRedSweep 6.2s linear infinite;
+  box-shadow: 0 0 3px rgba(229, 34, 34, 0.42);
+  animation: headerRedSweep 7.4s linear infinite;
+  will-change: transform;
 }
 
 @keyframes headerRedSweep {
   from {
-    transform: translateX(-220px);
+    transform: translateX(-160px);
   }
   to {
-    transform: translateX(calc(100vw + 220px));
+    transform: translateX(calc(100vw + 160px));
   }
 }
 
