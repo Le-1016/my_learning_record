@@ -80,12 +80,24 @@
       text-shadow: 0 0 10px rgba(229,34,34,0.45);
     }
 
-    header .logo,
-    header .logo span,
+    header .logo {
+      color: var(--white) !important;
+      text-shadow: none !important;
+    }
+
+    header .logo span {
+      color: var(--red) !important;
+    }
+
     header nav a,
     header nav a.active {
       color: var(--white) !important;
       text-shadow: none !important;
+    }
+
+    header nav a:hover,
+    header nav a.active:hover {
+      color: var(--red-bright) !important;
     }
 
     @media (max-width: 760px) {
@@ -108,7 +120,7 @@
   </div>
 
   <header>
-    <a href="index.html" class="logo">Le PORTFOLIO<span>.</span></a>
+    <a href="index.html" class="logo"><span>Le</span>PORTFOLIO<span>.</span></a>
     <nav>
       <a href="skill.html">SKILL</a>
       <a href="index.html#activity">BLOG</a>
