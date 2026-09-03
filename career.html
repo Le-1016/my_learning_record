@@ -25,6 +25,7 @@
       background: linear-gradient(to bottom, var(--red-bright), var(--red));
       box-shadow: 0 0 14px rgba(229,34,34,0.18);
       transform-origin: top;
+      transform: translateX(-50%);
       animation: timelineGrow 1.05s cubic-bezier(0.22, 1, 0.36, 1) both;
     }
 
@@ -58,14 +59,14 @@
     .timeline-node {
       position: relative;
       z-index: 2;
-      width: 42px;
-      height: 42px;
-      margin: 0 auto;
-      border: 7px solid var(--red);
+      width: 34px;
+      height: 34px;
+      margin: 4px auto 0;
+      border: 0;
       border-radius: 50%;
-      background: #080808;
+      background: var(--red);
       box-sizing: border-box;
-      box-shadow: 0 0 0 rgba(229,34,34,0);
+      box-shadow: 0 0 14px rgba(229,34,34,0.18);
       animation: nodeSettle 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
     }
 
@@ -78,8 +79,8 @@
     .timeline-copy h2 { margin: 0; color: var(--red); font-family: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif; font-size: clamp(23px, 2.5vw, 34px); font-weight: 600; letter-spacing: 0.02em; line-height: 1.7; }
 
     @keyframes timelineGrow {
-      from { transform: scaleY(0); opacity: 0.25; }
-      to { transform: scaleY(1); opacity: 1; }
+      from { transform: translateX(-50%) scaleY(0); opacity: 0.25; }
+      to { transform: translateX(-50%) scaleY(1); opacity: 1; }
     }
 
     @keyframes timelineItemIn {
@@ -90,7 +91,7 @@
     @keyframes nodeSettle {
       0% { transform: scale(0.55); box-shadow: 0 0 0 rgba(229,34,34,0); }
       65% { transform: scale(1.08); box-shadow: 0 0 22px rgba(229,34,34,0.22); }
-      100% { transform: scale(1); box-shadow: 0 0 10px rgba(229,34,34,0.10); }
+      100% { transform: scale(1); box-shadow: 0 0 12px rgba(229,34,34,0.16); }
     }
 
     nav a.active { color: var(--red-bright); text-shadow: 0 0 10px rgba(229,34,34,0.45); }
@@ -98,10 +99,10 @@
     @media (max-width: 760px) {
       .career-page { padding: 130px 7vw 90px; }
       .career-lead { margin-bottom: 58px; }
-      .timeline::before { left: 25px; width: 4px; }
-      .timeline-item { grid-template-columns: 50px 1fr; min-height: 0; padding: 0 0 54px; }
+      .timeline::before { left: 27px; width: 4px; }
+      .timeline-item { grid-template-columns: 54px 1fr; min-height: 0; padding: 0 0 54px; }
       .timeline-phase { grid-column: 2; padding: 0 0 8px 18px; font-size: 14px; }
-      .timeline-node { grid-column: 1; grid-row: 1 / span 2; width: 34px; height: 34px; border-width: 6px; margin: 0 0 0 10px; }
+      .timeline-node { grid-column: 1; grid-row: 1 / span 2; width: 30px; height: 30px; margin: 0 0 0 12px; }
       .timeline-copy { grid-column: 2; padding: 0 0 0 18px; }
     }
 
@@ -111,8 +112,10 @@
       .timeline-node {
         animation: none;
         opacity: 1;
-        transform: none;
       }
+      .timeline::before { transform: translateX(-50%); }
+      .timeline-item,
+      .timeline-node { transform: none; }
     }
   </style>
 </head>
