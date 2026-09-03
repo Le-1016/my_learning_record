@@ -22,8 +22,8 @@
     .skill-row.reverse .skill-copy { order: 2; }
     .skill-visual { display: flex; align-items: center; justify-content: center; min-height: 300px; will-change: transform; }
     .skill-logo { width: clamp(120px, 14vw, 190px); height: clamp(120px, 14vw, 190px); object-fit: contain; filter: brightness(0) saturate(100%) invert(24%) sepia(94%) saturate(5107%) hue-rotate(350deg) brightness(103%) contrast(96%); opacity: 1; }
+    .codex-logo { width: clamp(120px, 14vw, 190px); height: clamp(120px, 14vw, 190px); object-fit: contain; opacity: 0.96; }
     .skill-wordmark { font-family: "Orbitron", sans-serif; font-size: clamp(72px, 10vw, 150px); font-weight: 800; letter-spacing: 0.04em; color: var(--red-bright); }
-    .codex-wordmark { font-size: clamp(54px, 7vw, 104px); letter-spacing: 0.08em; }
     .sql-visual { position: relative; display: flex; align-items: center; justify-content: center; }
     .sql-logo { width: clamp(120px, 14vw, 190px); height: clamp(120px, 14vw, 190px); object-fit: contain; filter: brightness(0) saturate(100%) invert(24%) sepia(94%) saturate(5107%) hue-rotate(350deg) brightness(103%) contrast(96%); opacity: 1; }
     .sql-label { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-family: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif; font-size: clamp(28px, 4vw, 46px); font-weight: 700; letter-spacing: 0.06em; color: #000; line-height: 1; pointer-events: none; }
@@ -57,9 +57,8 @@
       .skill-row, .skill-row.reverse { grid-template-columns: 1fr; gap: 10px; min-height: auto; padding: 54px 0 64px; }
       .skill-row .skill-visual, .skill-row .skill-copy, .skill-row.reverse .skill-visual, .skill-row.reverse .skill-copy { order: initial; }
       .skill-visual { min-height: 180px; justify-content: flex-start; }
-      .skill-logo { width: 120px; height: 120px; }
+      .skill-logo, .codex-logo { width: 120px; height: 120px; }
       .skill-wordmark { font-size: 72px; }
-      .codex-wordmark { font-size: 56px; }
       .sql-visual { justify-content: flex-start; }
       .sql-logo { width: 120px; height: 120px; }
       .sql-label { left: 60px; font-size: 30px; }
@@ -100,7 +99,7 @@
       <section class="skill-row reverse"><div class="skill-visual"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker logo"></div><div class="skill-copy"><p class="skill-kicker">CONTAINER</p><h2>Docker</h2><p>AIアプリ、データベース、Webサービスをコンテナ化して動かすために使用しています。</p></div></section>
       <section class="skill-row"><div class="skill-copy"><p class="skill-kicker">SELF-STUDY / GAME ENGINE</p><h2>Unreal Engine</h2><p>現在、独学で学習中です。ゲームエンジンの基本操作やリアルタイム3D表現を中心に、実際に触りながら理解を深めています。</p></div><div class="skill-visual"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unrealengine/unrealengine-original.svg" alt="Unreal Engine logo"></div></section>
       <section class="skill-row reverse"><div class="skill-visual"><img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git logo"></div><div class="skill-copy"><p class="skill-kicker">VERSION CONTROL</p><h2>Git / GitHub</h2><p>ソースコードのバージョン管理とGitHubでの公開・管理に使用しています。</p></div></section>
-      <section class="skill-row"><div class="skill-copy"><p class="skill-kicker">AI CODING AGENT</p><h2>Codex</h2><p>コードの作成だけでなく、既存コードの修正・レビュー・リファクタリングまで一連の開発作業を進めるために使用しています。GitHub上のプロジェクトを実際に更新しながら、実装と検証を素早く反復するための開発支援ツールとして活用しています。</p></div><div class="skill-visual"><div class="skill-wordmark codex-wordmark" aria-label="Codex">CODEX</div></div></section>
+      <section class="skill-row"><div class="skill-copy"><p class="skill-kicker">AI CODING AGENT</p><h2>Codex</h2><p>コードの作成だけでなく、既存コードの修正・レビュー・リファクタリングまで一連の開発作業を進めるために使用しています。GitHub上のプロジェクトを実際に更新しながら、実装と検証を素早く反復するための開発支援ツールとして活用しています。</p></div><div class="skill-visual"><img class="codex-logo" src="https://cdn.simpleicons.org/openai/FFFFFF" alt="OpenAI logo"></div></section>
     </div>
   </main>
   <script>
