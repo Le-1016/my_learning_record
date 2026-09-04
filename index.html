@@ -33,7 +33,7 @@
 
     .profile-box {
       position: relative;
-      max-width: 980px;
+      max-width: 1080px;
       min-height: 360px;
       margin: 0 auto;
       padding: clamp(34px, 5vw, 64px);
@@ -120,6 +120,34 @@
       white-space: nowrap;
     }
 
+    .school-pair {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: clamp(24px, 5vw, 64px);
+      align-items: start;
+    }
+
+    .school-ja,
+    .school-en {
+      min-width: 0;
+    }
+
+    .school-ja {
+      font-size: clamp(18px, 2.1vw, 28px);
+      line-height: 1.8;
+      letter-spacing: 0.03em;
+    }
+
+    .school-en {
+      padding-top: 2px;
+      color: rgba(241,241,241,0.72);
+      font-family: "Orbitron", sans-serif;
+      font-size: clamp(12px, 1.25vw, 16px);
+      font-weight: 600;
+      line-height: 1.8;
+      letter-spacing: 0.04em;
+    }
+
     @media (max-width: 700px) {
       .profile-row {
         grid-template-columns: 1fr;
@@ -129,6 +157,10 @@
       .profile-value .en {
         display: block;
         margin: 6px 0 0;
+      }
+      .school-pair {
+        grid-template-columns: 1fr;
+        gap: 14px;
       }
     }
 
@@ -188,7 +220,10 @@
           </div>
           <div class="profile-row">
             <div class="profile-label">SCHOOL</div>
-            <div class="profile-value">大阪公立大学工業高等専門学校</div>
+            <div class="profile-value school-pair">
+              <div class="school-ja">大阪公立大学工業高等専門学校<br>総合工学システム学科知能情報コース</div>
+              <div class="school-en">Osaka Metropolitan University College of Technology<br>Department of General Systems Engineering<br>Intelligent Informatics Course</div>
+            </div>
           </div>
           <div class="profile-row">
             <div class="profile-label">CLUB</div>
