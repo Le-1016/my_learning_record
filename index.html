@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700;800;900&family=Orbitron:wght@500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=20260903-0615">
-  <link rel="stylesheet" href="japanese-theme.css?v=20260905-0610">
+  <link rel="stylesheet" href="japanese-theme.css?v=20260905-0622">
   <style>
     header .logo {
       color: var(--white) !important;
@@ -27,10 +27,7 @@
       color: var(--red-bright) !important;
     }
 
-    .profile {
-      position: relative;
-    }
-
+    .profile { position: relative; }
     .profile-box {
       position: relative;
       max-width: 1080px;
@@ -41,7 +38,6 @@
       background: linear-gradient(135deg, rgba(13,13,13,0.96), rgba(7,7,7,0.96));
       overflow: hidden;
     }
-
     .profile-box::before {
       content: "";
       position: absolute;
@@ -52,7 +48,6 @@
       background: var(--red);
       transition: width 1s cubic-bezier(0.22, 1, 0.36, 1);
     }
-
     .profile-box::after {
       content: "";
       position: absolute;
@@ -63,15 +58,9 @@
       background: var(--red);
       transition: height 1s cubic-bezier(0.22, 1, 0.36, 1) 0.12s;
     }
-
     .profile.is-visible .profile-box::before { width: 100%; }
     .profile.is-visible .profile-box::after { height: 100%; }
-
-    .profile-grid {
-      display: grid;
-      gap: 0;
-    }
-
+    .profile-grid { display: grid; gap: 0; }
     .profile-row {
       display: grid;
       grid-template-columns: 120px 1fr;
@@ -83,17 +72,11 @@
       transform: translateY(26px);
       transition: opacity 0.7s ease, transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
     }
-
     .profile-row:last-child { border-bottom: 0; }
     .profile-row:nth-child(2) { transition-delay: 0.12s; }
     .profile-row:nth-child(3) { transition-delay: 0.24s; }
     .profile-row:nth-child(4) { transition-delay: 0.36s; }
-
-    .profile.is-visible .profile-row {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
+    .profile.is-visible .profile-row { opacity: 1; transform: translateY(0); }
     .profile-label {
       color: var(--red);
       font-family: "Orbitron", sans-serif;
@@ -101,7 +84,6 @@
       font-weight: 700;
       letter-spacing: 0.16em;
     }
-
     .profile-value {
       color: var(--white);
       font-family: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif;
@@ -110,7 +92,6 @@
       line-height: 1.55;
       letter-spacing: 0.04em;
     }
-
     .profile-value .en {
       margin-left: 18px;
       color: rgba(241,241,241,0.72);
@@ -119,25 +100,18 @@
       letter-spacing: 0.12em;
       white-space: nowrap;
     }
-
     .school-pair {
       display: grid;
       grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
       gap: clamp(18px, 3vw, 42px);
       align-items: start;
     }
-
-    .school-ja,
-    .school-en {
-      min-width: 0;
-    }
-
+    .school-ja, .school-en { min-width: 0; }
     .school-ja {
       font-size: clamp(15px, 1.55vw, 21px);
       line-height: 1.85;
       letter-spacing: 0.015em;
     }
-
     .school-en {
       padding-top: 1px;
       color: rgba(241,241,241,0.72);
@@ -147,29 +121,13 @@
       line-height: 1.75;
       letter-spacing: 0.025em;
     }
-
     @media (max-width: 700px) {
-      .profile-row {
-        grid-template-columns: 1fr;
-        gap: 8px;
-        padding: 20px 0;
-      }
-      .profile-value .en {
-        display: block;
-        margin: 6px 0 0;
-      }
-      .school-pair {
-        grid-template-columns: 1fr;
-        gap: 14px;
-      }
-      .school-ja {
-        font-size: clamp(14px, 4.2vw, 18px);
-      }
-      .school-en {
-        font-size: clamp(10px, 3.2vw, 12px);
-      }
+      .profile-row { grid-template-columns: 1fr; gap: 8px; padding: 20px 0; }
+      .profile-value .en { display: block; margin: 6px 0 0; }
+      .school-pair { grid-template-columns: 1fr; gap: 14px; }
+      .school-ja { font-size: clamp(14px, 4.2vw, 18px); }
+      .school-en { font-size: clamp(10px, 3.2vw, 12px); }
     }
-
     @media (prefers-reduced-motion: reduce) {
       .profile-box::before { width: 100%; transition: none; }
       .profile-box::after { height: 100%; transition: none; }
@@ -254,13 +212,11 @@
     (() => {
       const profile = document.querySelector('.profile');
       if (!profile) return;
-
       const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (reduceMotion || !('IntersectionObserver' in window)) {
         profile.classList.add('is-visible');
         return;
       }
-
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
@@ -268,7 +224,6 @@
           observer.unobserve(entry.target);
         });
       }, { threshold: 0.24, rootMargin: '0px 0px -8% 0px' });
-
       observer.observe(profile);
     })();
   </script>
