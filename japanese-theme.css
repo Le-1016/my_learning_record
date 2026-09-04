@@ -144,15 +144,21 @@ nav a:hover {
   color: var(--white);
 }
 
-/* HEADER BORDER — 固定の赤線は使わず、動く赤ラインだけ残す */
+/* HEADER — 固定線は完全に無効化し、動く赤ラインだけ残す */
 header {
   overflow: hidden;
+  border-top: 0 !important;
   border-bottom: 0 !important;
+  outline: 0 !important;
   box-shadow: none;
 }
 
 header::before {
-  display: none;
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
 }
 
 /* 下端：短い赤い光が左から右へ流れる */
