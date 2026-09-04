@@ -122,8 +122,8 @@
 
     .school-pair {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: clamp(24px, 5vw, 64px);
+      grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+      gap: clamp(18px, 3vw, 42px);
       align-items: start;
     }
 
@@ -133,19 +133,19 @@
     }
 
     .school-ja {
-      font-size: clamp(18px, 2.1vw, 28px);
-      line-height: 1.8;
-      letter-spacing: 0.03em;
+      font-size: clamp(15px, 1.55vw, 21px);
+      line-height: 1.85;
+      letter-spacing: 0.015em;
     }
 
     .school-en {
-      padding-top: 2px;
+      padding-top: 1px;
       color: rgba(241,241,241,0.72);
       font-family: "Orbitron", sans-serif;
-      font-size: clamp(12px, 1.25vw, 16px);
+      font-size: clamp(10px, 0.95vw, 13px);
       font-weight: 600;
-      line-height: 1.8;
-      letter-spacing: 0.04em;
+      line-height: 1.75;
+      letter-spacing: 0.025em;
     }
 
     @media (max-width: 700px) {
@@ -161,6 +161,12 @@
       .school-pair {
         grid-template-columns: 1fr;
         gap: 14px;
+      }
+      .school-ja {
+        font-size: clamp(14px, 4.2vw, 18px);
+      }
+      .school-en {
+        font-size: clamp(10px, 3.2vw, 12px);
       }
     }
 
