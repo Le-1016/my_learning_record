@@ -145,11 +145,11 @@ nav a:hover {
   color: var(--white);
 }
 
-/* HEADER — 固定線は完全に無効化し、動く赤ラインだけ残す */
+/* HEADER — 上側は何も出さず、下側だけ赤い境界線＋動くハイライト */
 header {
   overflow: hidden;
   border-top: 0 !important;
-  border-bottom: 0 !important;
+  border-bottom: 1px solid rgba(229, 34, 34, 0.38) !important;
   outline: 0 !important;
   box-shadow: none;
 }
@@ -167,7 +167,7 @@ header::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -1px;
+  bottom: 0;
   width: 132px;
   height: 2px;
   pointer-events: none;
@@ -183,7 +183,7 @@ header::after {
     rgba(229, 34, 34, 0.18) 84%,
     transparent 100%
   );
-  box-shadow: 0 0 3px rgba(229, 34, 34, 0.42);
+  box-shadow: 0 0 4px rgba(229, 34, 34, 0.55);
   animation: headerRedSweep 7.4s linear infinite;
   will-change: transform;
 }
