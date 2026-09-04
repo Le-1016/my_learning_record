@@ -21,20 +21,21 @@ nav a,
   overflow: hidden;
   letter-spacing: 0.08em;
   word-spacing: 0.72em;
-  background-image: linear-gradient(90deg, #ff2424 0%, #d91818 46%, #730808 100%);
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: 0% 100%;
-  transition: background-size 0.46s cubic-bezier(0.22, 1, 0.36, 1), color 0.28s ease;
+  background: none !important;
+  transition: none;
 }
 
 .logo:hover {
-  background-size: 100% 100%;
+  background: none !important;
 }
 
-header .logo:hover,
+header .logo:hover {
+  color: var(--white) !important;
+  text-shadow: none !important;
+}
+
 header .logo:hover span {
-  color: #050505 !important;
+  color: var(--red) !important;
   text-shadow: none !important;
 }
 
@@ -193,10 +194,6 @@ header::after {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .logo {
-    transition: none;
-  }
-
   header::after {
     animation: none;
     display: none;
