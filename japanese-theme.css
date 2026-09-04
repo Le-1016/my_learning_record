@@ -15,8 +15,35 @@ nav a,
 }
 
 .logo {
+  position: relative;
+  display: inline-block;
+  padding: 8px 12px;
+  overflow: hidden;
+  z-index: 0;
   letter-spacing: 0.08em;
   word-spacing: 0.72em;
+  transition: color 0.28s ease;
+}
+
+.logo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, #ff2424 0%, #d91818 46%, #730808 100%);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.46s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.logo:hover::before {
+  transform: scaleX(1);
+}
+
+header .logo:hover,
+header .logo:hover span {
+  color: #050505 !important;
+  text-shadow: none !important;
 }
 
 /* トピック・タイトルは赤 */
@@ -169,6 +196,10 @@ header::after {
   header::after {
     animation: none;
     display: none;
+  }
+
+  .logo::before {
+    transition: none;
   }
 }
 
