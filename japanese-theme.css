@@ -145,7 +145,7 @@ nav a:hover {
   color: var(--white);
 }
 
-/* HEADER — 上側は何も出さず、下側だけ赤い境界線＋動くハイライト */
+/* HEADER — 上側は何も出さず、下側の固定赤線だけ残す */
 header {
   overflow: hidden;
   border-top: 0 !important;
@@ -154,50 +154,14 @@ header {
   box-shadow: none;
 }
 
-header::before {
+header::before,
+header::after {
   content: none !important;
   display: none !important;
   background: none !important;
   border: 0 !important;
   box-shadow: none !important;
-}
-
-/* 下端：短い赤い光が左から右へ流れる */
-header::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 132px;
-  height: 2px;
-  pointer-events: none;
-  z-index: 3;
-  border-radius: 999px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(229, 34, 34, 0.18) 16%,
-    rgba(229, 34, 34, 0.82) 38%,
-    #ff3030 50%,
-    rgba(229, 34, 34, 0.82) 62%,
-    rgba(229, 34, 34, 0.18) 84%,
-    transparent 100%
-  );
-  box-shadow: 0 0 4px rgba(229, 34, 34, 0.55);
-  animation: headerRedSweep 7.4s linear infinite;
-  will-change: transform;
-}
-
-@keyframes headerRedSweep {
-  from { transform: translateX(-160px); }
-  to { transform: translateX(calc(100vw + 160px)); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  header::after {
-    animation: none;
-    display: none;
-  }
+  animation: none !important;
 }
 
 @media (max-width: 600px) {
